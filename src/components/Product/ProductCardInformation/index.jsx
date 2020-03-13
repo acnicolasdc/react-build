@@ -1,9 +1,11 @@
 import React from 'react'
+import { CardContainer } from './styles';
 
-function ProductCardInformation() {
+const ProductCardInformation = (props) => {
     return (
-        <div>
-        </div>
+        <CardContainer>
+            <h1>Any Product</h1>
+        </CardContainer>
     )
 }
 
