@@ -7,7 +7,7 @@ const Home = (props) => {
     console.log(theme)
     return (
         <div>
-            <p>Welcome to context</p>
+            <p>Welcome to Soffa</p>
             <ProductCardInformation />
         </div>
     )
