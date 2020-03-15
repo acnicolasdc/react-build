@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { rotation } from '../../../assets/animations/rotativeAnimations';
+import { rotate } from '../../../assets/animations/rotativeAnimations';
 
 export const Loader =  styled.div`
     position: relative;
@@ -34,7 +34,7 @@ export const Loader =  styled.div`
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        animation: ${rotation} 0.5s infinite linear;
+        animation: ${rotate} 0.5s infinite linear;
     }
     ::after {
         border: ${props => props.size-Math.round(props.size*0.85)}px solid rgb(1,177,198,0.3);

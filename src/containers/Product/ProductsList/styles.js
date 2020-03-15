@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { GlobalLoaderContainer } from '../styles';
 export const ListContainer =  styled.div`
     position: relative;
     display: grid;
@@ -12,10 +12,4 @@ export const ListContainer =  styled.div`
         max-width: 450px;
     }
 `;
-
-export const LoaderContainer = styled.div`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-`;
+export const LoaderContainer = GlobalLoaderContainer;

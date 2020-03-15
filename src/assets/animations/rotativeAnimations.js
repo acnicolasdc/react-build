@@ -1,6 +1,6 @@
 import { keyframes } from 'styled-components';
 
-export const rotation = keyframes`
+export const rotate = keyframes`
     0% {
         transform: translate(-50%, -50%) rotate(0deg);
     }

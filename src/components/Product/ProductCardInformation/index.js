@@ -11,7 +11,7 @@ ProductCardInformation.propTypes = {
     TopButton: PropTypes.func.isRequired,
     FooterButton: PropTypes.func.isRequired,
     disabledFooterButton: PropTypes.bool.isRequired,
-    disabledToButton: PropTypes.bool.isRequired,
+    disabledTopButton: PropTypes.bool.isRequired,
 };
 
 ProductCardInformation.defaultProps = {
@@ -19,7 +19,7 @@ ProductCardInformation.defaultProps = {
     name: CONST.GENERIC_PRODUCT_NAME,
     description: CONST.GENERIC_PRODUCT_DESCRIPTION,
     disabledFooterButton: CONST.GENERIC_PRODUCT_DISABLED_FOOTER_BUTTON,
-    disabledToButton: CONST.GENERIC_PRODUCT_DISABLED_TOP_BUTTON,
+    disabledTopButton: CONST.GENERIC_PRODUCT_DISABLED_TOP_BUTTON,
     TopButton: GlobalHeartButton,
     FooterButton: GlobalAddToCartButton,
 };
