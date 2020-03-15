@@ -8,7 +8,7 @@ const ProductCardInformation = ({ image, name, description, TopButton, FooterBut
     return (
         <CardContainer>
             <div className={ topButtonClasses }>
-                <TopButton size='50px'/>
+                <TopButton size={50}/>
             </div>
             <h1>{ name }</h1>
             <img src={ image } alt={ name } />

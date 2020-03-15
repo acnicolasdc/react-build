@@ -21,12 +21,13 @@ function ProductsList({ Item, Spinner }) {
 
     return (
         isLoading?
-        <LoaderContainer>
-            <Spinner />
-        </LoaderContainer>:
-        <ListContainer>
-            {_getAllProducts()}
-        </ListContainer>
+            <LoaderContainer>
+                <Spinner />
+            </LoaderContainer>
+        :
+            <ListContainer>
+                {_getAllProducts()}
+            </ListContainer>
     )
 }
 export default ProductsList;
