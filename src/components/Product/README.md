@@ -1,1 +1,1 @@
-# Components Rules
+# Presentational Components Rules

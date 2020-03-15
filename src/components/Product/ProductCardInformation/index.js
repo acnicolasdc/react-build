@@ -8,16 +8,20 @@ ProductCardInformation.propTypes = {
     image: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    topButton: PropTypes.element.isRequired,
-    footerButton: PropTypes.element.isRequired,
+    TopButton: PropTypes.func.isRequired,
+    FooterButton: PropTypes.func.isRequired,
+    disabledFooterButton: PropTypes.bool.isRequired,
+    disabledToButton: PropTypes.bool.isRequired,
 };
 
 ProductCardInformation.defaultProps = {
     image: CONST.GENERIC_PRODUCT_IMAGE,
     name: CONST.GENERIC_PRODUCT_NAME,
     description: CONST.GENERIC_PRODUCT_DESCRIPTION,
-    topButton: GlobalHeartButton,
-    footerButton: GlobalAddToCartButton,
+    disabledFooterButton: CONST.GENERIC_PRODUCT_DISABLED_FOOTER_BUTTON,
+    disabledToButton: CONST.GENERIC_PRODUCT_DISABLED_TOP_BUTTON,
+    TopButton: GlobalHeartButton,
+    FooterButton: GlobalAddToCartButton,
 };
 
 export default ProductCardInformation;

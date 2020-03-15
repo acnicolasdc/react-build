@@ -6,8 +6,8 @@ export const CardContainer =  styled.div`
     margin-right: auto;
     margin-top:100px;
     border-radius:4px;
-    width:450px;
-    height:650px;
+    max-width:450px;
+    max-height:650px;
     background-color:#E0E5EC;
     box-shadow: 9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px  rgba(255,255,255, 0.5);
     text-align: center;
@@ -17,6 +17,7 @@ export const CardContainer =  styled.div`
         color: rgb(163,177,198,0.6);
         margin: auto;
         vertical-align: middle;
+        margin-bottom: 15px;
     }
     p {
         font-size: 1rem;
@@ -24,7 +25,7 @@ export const CardContainer =  styled.div`
         padding: 0px 20px;
     }
     img {
-        width: 90%;
+        width: 80%;
         object-fit: contain;
         -webkit-filter: grayscale(90%); /* Safari 6.0 - 9.0 */
         filter: grayscale(90%);
@@ -34,6 +35,9 @@ export const CardContainer =  styled.div`
         right: 4%;
     }
     .footer-button{
-        margin-top: 25px;
+        margin-top: 20px;
+    }
+    .hidden {
+        display: none;
     }
 `;

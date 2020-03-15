@@ -1,16 +1,19 @@
-import React from 'react'
+import React from 'react';
+import classNames from 'classnames';
 import { CardContainer } from './styles';
 
-const ProductCardInformation = ({ image, name, description, topButton: TopButton, footerButton:FooterButton }) => {
+const ProductCardInformation = ({ image, name, description, TopButton, FooterButton, disabledFooterButton, disabledTopButton }) => {
+    const topButtonClasses = classNames('relative-button', {'hidden':disabledTopButton});
+    const footerButtonClasses = classNames('footer-button', {'hidden':disabledFooterButton});
     return (
         <CardContainer>
-            <div className="relative-button">
+            <div className={ topButtonClasses }>
                 <TopButton size='50px'/>
             </div>
             <h1>{ name }</h1>
             <img src={ image } alt={ name } />
             <p>{ description }</p>
-            <div className="footer-button">
+            <div className={ footerButtonClasses }>
                 <FooterButton />
             </div>
         </CardContainer>
