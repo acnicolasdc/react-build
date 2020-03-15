@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import ProductCardInformation from '../../components/Product/ProductCardInformation';
+import ProductsList from '../../containers/Product/ProductsList';
 import ThemeContext from '../../ThemeContext';
 
 const Home = (props) => {
@@ -8,7 +8,7 @@ const Home = (props) => {
     return (
         <div>
             <p>Welcome to Soffa</p>
-            <ProductCardInformation />
+            <ProductsList />
         </div>
     )
 }
