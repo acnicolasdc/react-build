@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import FormBody from 'components/Form/FormBody';
-import FormInput from 'components/Form/FormInput';
-import TextArea from 'components/Form/FormTextArea';
-import GlobalButton from 'components/Global/GlobalButton';
+import ProductDetailForm from './components/ProductDetailForm';
 import { ProductDetailContainer, LoaderContainer } from './styles';
 
 function ProductDetail({ Item, Spinner }) {
@@ -38,21 +35,10 @@ function ProductDetail({ Item, Spinner }) {
                 description={product.description}
             />
             <div className="form-block">
-                <FormBody render ={[
-                    <FormInput
-                        name='name'
-                        placeholder='Write a new name'
-                        value={product.name}
-                        onChange={_onChangeForm}
-                    />,
-                    <TextArea
-                        name='description'
-                        placeholder='Write a new description'
-                        value={product.description}
-                        onChange={_onChangeForm}
-                    />,
-                    <GlobalButton title='Update product'/>
-                ]}/>
+                <ProductDetailForm
+                    product={product}
+                    onChangeInput={_onChangeForm}
+                />
             </div>
         </ProductDetailContainer>
     )

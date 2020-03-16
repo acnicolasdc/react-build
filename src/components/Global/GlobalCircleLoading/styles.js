@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { rotate } from '../../../assets/animations/rotativeAnimations';
+import { rotate } from 'assets/animations/rotativeAnimations';
 
 export const Loader =  styled.div`
     position: relative;
