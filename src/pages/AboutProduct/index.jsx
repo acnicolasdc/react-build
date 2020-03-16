@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import ProductDetail from '../../containers/Product/ProductDetail';
-import ThemeContext from '../../ThemeContext';
 
 const AboutProduct = (props) => {
     return (
