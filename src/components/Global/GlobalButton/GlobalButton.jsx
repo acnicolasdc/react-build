@@ -1,7 +1,7 @@
 import React from 'react'
 import { ButtonContainer } from './styles';
 
-const GlobalAddToCartButton = ({ title }) => {
+const GlobalButton = ({ title }) => {
     return (
         <ButtonContainer>
             <p>{title}</p>
@@ -9,4 +9,4 @@ const GlobalAddToCartButton = ({ title }) => {
     )
 }
 
-export default GlobalAddToCartButton;
+export default GlobalButton;

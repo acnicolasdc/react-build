@@ -1,9 +1,9 @@
 import React from 'react'
 import { FormContainer } from './styles';
 
-const FormBody = ({ inputs }) => {
+const FormBody = ({ render }) => {
     const _renderInputs = () => {
-        return inputs.map( (children, index) => (
+        return render.map( (children, index) => (
             <div className ="form-inputs" key={index}>{children}</div>
         ));
     }

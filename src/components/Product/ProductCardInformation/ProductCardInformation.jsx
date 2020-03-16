@@ -14,7 +14,7 @@ const ProductCardInformation = ({ image, name, description, TopButton, FooterBut
             <img src={ image } alt={ name } />
             <p>{ description }</p>
             <div className={ footerButtonClasses }>
-                <FooterButton />
+                <FooterButton title='Add to Cart'/>
             </div>
         </CardContainer>
     )

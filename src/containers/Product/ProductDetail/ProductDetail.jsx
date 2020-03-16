@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import FormBody from '../../../components/Form/FormBody';
 import FormInput from '../../../components/Form/FormInput';
 import TextArea from '../../../components/Form/FormTextArea';
+import GlobalButton from '../../../components/Global/GlobalButton';
 import { ProductDetailContainer, LoaderContainer } from './styles';
 
 function ProductDetail({ Item, Spinner }) {
@@ -37,7 +38,7 @@ function ProductDetail({ Item, Spinner }) {
                 description={product.description}
             />
             <div className="form-block">
-                <FormBody inputs ={[
+                <FormBody render ={[
                     <FormInput
                         name='name'
                         placeholder='Write a new name'
@@ -50,6 +51,7 @@ function ProductDetail({ Item, Spinner }) {
                         value={product.description}
                         onChange={_onChangeForm}
                     />,
+                    <GlobalButton title='Update product'/>
                 ]}/>
             </div>
         </ProductDetailContainer>

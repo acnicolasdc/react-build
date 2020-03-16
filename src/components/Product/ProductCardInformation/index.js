@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import ProductCardInformation from './ProductCardInformation';
 import GlobalHeartButton from '../../Global/GlobalHeartButton';
-import GlobalAddToCartButton from '../../Global/GlobalAddToCartButton';
+import GlobalButton from '../../Global/GlobalButton';
 import CONST from './utils/const.js';
 
 ProductCardInformation.propTypes = {
@@ -21,7 +21,7 @@ ProductCardInformation.defaultProps = {
     disabledFooterButton: CONST.GENERIC_PRODUCT_DISABLED_FOOTER_BUTTON,
     disabledTopButton: CONST.GENERIC_PRODUCT_DISABLED_TOP_BUTTON,
     TopButton: GlobalHeartButton,
-    FooterButton: GlobalAddToCartButton,
+    FooterButton: GlobalButton,
 };
 
 export default ProductCardInformation;
