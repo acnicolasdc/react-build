@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import ProductsList from '../../containers/Product/ProductsList';
+import ProductsList from 'containers/Product/ProductsList';
 import ThemeContext from '../../ThemeContext';
 
 const Home = (props) => {

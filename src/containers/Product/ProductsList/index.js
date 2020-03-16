@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import ProductList from './ProductList';
-import ProductCardInformation from '../../../components/Product/ProductCardInformation';
-import GlobalCircleLoading from '../../../components/Global/GlobalCircleLoading';
+import ProductCardInformation from 'components/Product/ProductCardInformation';
+import GlobalCircleLoading from 'components/Global/GlobalCircleLoading';
 
 ProductList.propTypes = {
     Item: PropTypes.func.isRequired,

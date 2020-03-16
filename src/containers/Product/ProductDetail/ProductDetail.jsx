@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import FormBody from '../../../components/Form/FormBody';
-import FormInput from '../../../components/Form/FormInput';
-import TextArea from '../../../components/Form/FormTextArea';
-import GlobalButton from '../../../components/Global/GlobalButton';
+import FormBody from 'components/Form/FormBody';
+import FormInput from 'components/Form/FormInput';
+import TextArea from 'components/Form/FormTextArea';
+import GlobalButton from 'components/Global/GlobalButton';
 import { ProductDetailContainer, LoaderContainer } from './styles';
 
 function ProductDetail({ Item, Spinner }) {
