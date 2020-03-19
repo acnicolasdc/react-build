@@ -2,11 +2,11 @@ import React from 'react';
 import classNames from 'classnames';
 import { CardContainer } from './styles';
 
-const ProductCardInformation = ({ image, name, description, TopButton, FooterButton, disabledFooterButton, disabledTopButton }) => {
+const ProductCardInformation = ({ image, name, description, TopButton, FooterButton, disabledFooterButton, disabledTopButton, onClick:handleOnClick }) => {
     const topButtonClasses = classNames('relative-button', {'hidden':disabledTopButton});
     const footerButtonClasses = classNames('footer-button', {'hidden':disabledFooterButton});
     return (
-        <CardContainer>
+        <CardContainer onClick={handleOnClick}>
             <div className={ topButtonClasses }>
                 <TopButton size={50}/>
             </div>

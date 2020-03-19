@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import { useHistory } from "react-router-dom";
 import { ListContainer, LoaderContainer } from './styles';
 
 function ProductsList({ Item, Spinner }) {
+    let history = useHistory();
     const [isLoading, setIsLoading] = useState(false);
     const [productsList, setProductsList] = useState([]);
     useEffect(() => {
@@ -11,10 +13,13 @@ function ProductsList({ Item, Spinner }) {
             setIsLoading(false);
         },1000);
     }, []);
-
+    const _goToOther = () => {
+        console.log('hola')
+        history.push('/about');
+    }
     const _getAllProducts = () => productsList.map(product => (
             <div className="list-element" key={product}>
-                <Item />
+                <Item onClick={_goToOther}/>
             </div>
         )
     );

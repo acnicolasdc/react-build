@@ -12,6 +12,7 @@ ProductCardInformation.propTypes = {
     FooterButton: PropTypes.func.isRequired,
     disabledFooterButton: PropTypes.bool.isRequired,
     disabledTopButton: PropTypes.bool.isRequired,
+    onClick: PropTypes.func.isRequired,
 };
 
 ProductCardInformation.defaultProps = {
@@ -22,6 +23,7 @@ ProductCardInformation.defaultProps = {
     disabledTopButton: CONST.GENERIC_PRODUCT_DISABLED_TOP_BUTTON,
     TopButton: GlobalHeartButton,
     FooterButton: GlobalButton,
+    onClick: () => console.log('not onclick function')
 };
 
 export default ProductCardInformation;
