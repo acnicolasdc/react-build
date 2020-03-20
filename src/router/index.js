@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Main from './Main';
 // Routes
 import AboutProduct from 'pages/AboutProduct';
-import Home from 'pages/Home';
+import Home, { routes as homeRoutes } from 'pages/Home';
 
 Main.propTypes = {
     routes: PropTypes.arrayOf(PropTypes.shape({
@@ -21,6 +21,7 @@ Main.defaultProps = {
             name: 'about',
             RouteComponent: AboutProduct
         },
+        ...homeRoutes
     ],
 };
 
