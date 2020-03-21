@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CircleButton =  styled.button`
+export const ButtonHeartContainer =  styled.button`
     position: relative;
     border: none;
     border-radius:100px;

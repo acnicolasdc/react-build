@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { rotate } from 'assets/animations/rotativeAnimations';
 
-export const Loader =  styled.div`
+export const ProgressCircleLoader =  styled.div`
     position: relative;
     height: ${props => props.size}px;
     width: ${props => props.size}px;

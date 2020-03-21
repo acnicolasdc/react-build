@@ -3,7 +3,7 @@ import ProductDetailForm from './ProductDetailForm';
 import FormBody from 'components/Form/FormBody';
 import FormInput from 'components/Form/FormInput';
 import FormTextArea from 'components/Form/FormTextArea';
-import GlobalButton from 'components/Global/GlobalButton';
+import ButtonGeneric from 'components/Button/ButtonGeneric';
 
 ProductDetailForm.propTypes = {
     Form: PropTypes.func.isRequired,
@@ -21,7 +21,7 @@ ProductDetailForm.defaultProps = {
     Form: FormBody,
     Input: FormInput,
     TextArea: FormTextArea,
-    Button: GlobalButton,
+    Button: ButtonGeneric,
     product: { name: '', description: '' },
     onChangeInput: () => console.log('Without onChangeInput'),
 };

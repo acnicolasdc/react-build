@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import ProductCardInformation from './ProductCardInformation';
-import GlobalHeartButton from '../../Global/GlobalHeartButton';
-import GlobalButton from '../../Global/GlobalButton';
+import ButtonHeart from '../../Button/ButtonHeart';
+import ButtonGeneric from '../../Button/ButtonGeneric';
 import CONST from './utils/const.js';
 
 ProductCardInformation.propTypes = {
@@ -21,8 +21,8 @@ ProductCardInformation.defaultProps = {
     description: CONST.GENERIC_PRODUCT_DESCRIPTION,
     disabledFooterButton: CONST.GENERIC_PRODUCT_DISABLED_FOOTER_BUTTON,
     disabledTopButton: CONST.GENERIC_PRODUCT_DISABLED_TOP_BUTTON,
-    TopButton: GlobalHeartButton,
-    FooterButton: GlobalButton,
+    TopButton: ButtonHeart,
+    FooterButton: ButtonGeneric,
     onClick: () => console.log('not onclick function')
 };
 

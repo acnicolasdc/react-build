@@ -1,13 +1,13 @@
 import React from 'react';
 import Main from './router';
-import ThemeContext, { theme } from './ThemeContext';
+import ThemeProvider from './theme';
 
 function App() {
   return (
     <div className="App">
-      <ThemeContext.Provider value={theme.light}>
+      <ThemeProvider>
         <Main />
-      </ThemeContext.Provider>
+      </ThemeProvider>
     </div>
   );
 }

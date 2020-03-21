@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import FormBody from './FormBody';
-import GlobalButton from '../../Global/GlobalButton';
+import ButtonGeneric from '../../Button/ButtonGeneric';
 
 FormBody.propTypes = {
     render: PropTypes.arrayOf(PropTypes.element).isRequired,
@@ -10,7 +10,7 @@ FormBody.propTypes = {
 
 FormBody.defaultProps = {
     render: [],
-    Button: GlobalButton,
+    Button: ButtonGeneric,
     onSend: () => console.log('Without function'),
 };
 export default FormBody;

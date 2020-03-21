@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ButtonContainer =  styled.button`
+export const ButtonGenericContainer =  styled.button`
     position: relative;
     border: none;
     outline: none;

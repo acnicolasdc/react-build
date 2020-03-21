@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import ProductDetail from './ProductDetail';
 import ProductCardInformation from 'components/Product/ProductCardInformation';
-import GlobalCircleLoading from 'components/Global/GlobalCircleLoading';
+import ProgressCircle from 'components/Progress/ProgressCircle';
 
 ProductDetail.propTypes = {
     Item: PropTypes.func.isRequired,
@@ -10,7 +10,7 @@ ProductDetail.propTypes = {
 
 ProductDetail.defaultProps = {
     Item: ProductCardInformation,
-    Spinner: GlobalCircleLoading,
+    Spinner: ProgressCircle,
 };
 
 export default ProductDetail;
