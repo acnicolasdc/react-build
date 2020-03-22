@@ -16,13 +16,11 @@ export const ButtonSwitchContainer =  styled.button`
     box-shadow: ${props => props.theme.squaredShadow};
     padding: 0;
     :hover {
-        box-shadow:
-            inset 1rem 1rem 2rem rgb(163,177,198,0.5),
-            inset -1rem -1rem 2rem rgba(255,255,255,.5);
+        box-shadow: ${props => props.theme.insetShadow};
     }
     p {
         font-size: 1rem;
-        color: rgb(163,177,198,1);
+        color: ${props => props.theme.textColor};
         padding: 0px 20px;
     }
 `;

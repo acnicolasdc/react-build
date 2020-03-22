@@ -5,25 +5,21 @@ export const ProgressCircleLoader =  styled.div`
     position: relative;
     height: ${props => props.size}px;
     width: ${props => props.size}px;
-    background: #E0E5EC;
+    background-color:${props => props.theme.background};
     border-radius: 50%;
-    box-shadow:
-        inset -7px -7px 25px 0 rgba(255, 255, 255, 0.5),
-        inset 7px 7px 25px 0 rgb(163,177,198,0.5);
+    box-shadow: ${props => props.theme.squaredShadow};
     ::before {
         content: "";
         position: absolute;
         height: ${props => props.size-Math.round(props.size*0.15)}px;
         width: ${props => props.size-Math.round(props.size*0.15)}px;
-        background: #E0E5EC;
+        background-color:${props => props.theme.background};
         border-radius: 50%;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 1;
-        box-shadow:
-            inset -7px -7px 25px 0 rgba(255, 255, 255, 0.9),
-            inset 7px 7px 25px 0 rgb(163,177,198,0.3);
+        box-shadow: ${props => props.theme.squaredShadow};
     }
     ::after {
         content: "";
