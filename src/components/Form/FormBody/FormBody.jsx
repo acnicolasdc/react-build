@@ -1,14 +1,14 @@
 import React from 'react'
 import { FormContainer } from './styles';
 
-const FormBody = ({ render }) => {
+const FormBody = ({ theme: themeProvider, render }) => {
     const _renderInputs = () => {
         return render.map( (children, index) => (
             <div className ="form-inputs" key={index}>{children}</div>
         ));
     }
     return (
-        <FormContainer>
+        <FormContainer theme={ themeProvider }>
             <fieldset>
                 {_renderInputs()}
             </fieldset>

@@ -14,8 +14,7 @@ function ProductsList({ Item, Spinner }) {
         },1000);
     }, []);
     const _goToOther = () => {
-        console.log('hola')
-        history.push('/dashboard');
+        history.push('/about');
     }
     const _getAllProducts = () => productsList.map(product => (
             <div className="list-element" key={product}>

@@ -10,7 +10,7 @@ function Layout() {
         <>
             <Main />
             <DarkModeContainer>
-            <ButtonSwitch onClick={toggle} isToggle={dark}/>
+                <ButtonSwitch onClick={toggle} isToggle={dark}/>
             </DarkModeContainer>
         </>
     );

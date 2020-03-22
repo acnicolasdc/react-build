@@ -11,14 +11,14 @@ export const CardContainer = styled.div`
     padding: 15px 20px;
     h1 {
         font-size: 3rem;
-        color: rgb(163,177,198,0.6);
+        color: ${props => props.theme.titleColor};
         margin: auto;
         vertical-align: middle;
         margin-bottom: 15px;
     }
     p {
         font-size: 1rem;
-        color: rgb(163,177,198,1);
+        color: ${props => props.theme.textColor};
         padding: 0px 20px;
     }
     img {

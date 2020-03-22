@@ -13,9 +13,7 @@ export const ButtonHeartContainer =  styled.button`
     box-shadow: ${props => props.theme.squaredShadow};
     outline: none;
     :hover {
-        box-shadow:
-            inset 1rem 1rem 2rem rgb(163,177,198,0.5),
-            inset -1rem -1rem 2rem rgba(255,255,255,.5);
+        box-shadow: ${props => props.theme.insetShadow};
     }
     .heart{
         position: absolute;
