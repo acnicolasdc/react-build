@@ -11,8 +11,6 @@ FormBody.propTypes = {
 FormBody.defaultProps = {
   render: [],
   Button: ButtonGeneric,
-  onSubmit: e => {
-    e.preventDefault();
-  }
+  onSubmit: e => { e.preventDefault() }
 };
 export default FormBody;
