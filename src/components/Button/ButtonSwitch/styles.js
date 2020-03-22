@@ -12,8 +12,8 @@ export const ButtonSwitchContainer =  styled.button`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #E0E5EC;
-    box-shadow: 9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px  rgba(255,255,255, 0.5);
+    background-color:${props => props.theme.background};
+    box-shadow: ${props => props.theme.squaredShadow};
     padding: 0;
     :hover {
         box-shadow:

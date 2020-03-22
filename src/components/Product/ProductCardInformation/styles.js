@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-export const CardContainer =  styled.div`
+export const CardContainer = styled.div`
     position: relative;
     border-radius:4px;
     max-width:450px;
     max-height:650px;
-    background-color:#E0E5EC;
-    box-shadow: 9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px  rgba(255,255,255, 0.5);
+    background-color:${props => props.theme.background};
+    box-shadow: ${props => props.theme.squaredShadow};
     text-align: center;
     padding: 15px 20px;
     h1 {

@@ -1,14 +1,14 @@
 import React from 'react';
-import Main from './router';
-import ThemeProvider from './theme';
+import Layout from './Layout';
+import ThemeProvider from 'theme/index';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <ThemeProvider>
-        <Main />
+        <Layout />
       </ThemeProvider>
-    </div>
+    </>
   );
 }
 

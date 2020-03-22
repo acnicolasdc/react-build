@@ -1,9 +1,9 @@
 import React from 'react'
 import { ButtonGenericContainer } from './styles';
 
-const ButtonGeneric = ({ title }) => {
+const ButtonGeneric = ({ theme: themeProvider, title }) => {
     return (
-        <ButtonGenericContainer>
+        <ButtonGenericContainer theme={ themeProvider }>
             <p>{title}</p>
         </ButtonGenericContainer>
     )
