@@ -1,10 +1,10 @@
 import React from 'react'
 import { TextArea } from './styles';
 
-const FormTextArea = ({ theme: themeProvider, placeholder, name, value, onChange:handleOnChange }) => {
+const FormTextArea = ({ placeholder, name, value, onChange:handleOnChange, ...restProps }) => {
     return (
         <TextArea
-            theme={ themeProvider }
+            {...restProps}
             placeholder={placeholder}
             name={name}
             onChange={handleOnChange}

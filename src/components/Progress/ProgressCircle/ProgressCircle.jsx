@@ -1,9 +1,9 @@
 import React from 'react'
 import { ProgressCircleLoader } from './styles';
 
-const ProgressCircle = ({ theme: themeProvider, size }) => {
+const ProgressCircle = ({ size, ...restProps }) => {
     return (
-        <ProgressCircleLoader theme={ themeProvider } size={ size }/>
+        <ProgressCircleLoader {...restProps} size={ size }/>
     )
 }
 

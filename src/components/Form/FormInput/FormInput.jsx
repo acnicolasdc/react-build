@@ -1,10 +1,10 @@
 import React from 'react'
 import { Input } from './styles';
 
-const FormInput = ({ theme: themeProvider, placeholder, name, value, onChange:handleOnChange }) => {
+const FormInput = ({ placeholder, name, value, onChange:handleOnChange, ...restProps }) => {
     return (
         <Input
-            theme={ themeProvider }
+            {...restProps}
             placeholder={placeholder}
             name={name}
             onChange={handleOnChange}

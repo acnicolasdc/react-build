@@ -2,14 +2,14 @@ import React from 'react';
 import classNames from 'classnames';
 import { CardContainer } from './styles';
 
-const ProductCardInformation = ({ theme: themeProvider, image, name, description, TopButton, FooterButton, disabledFooterButton, disabledTopButton,
-    onClickCard:handleOnClickCard, onClickButtonFooter:handleOnClickButtonFooter, onClickButtonTop:handleOnClickButtonTop, isSelected }) => {
+const ProductCardInformation = ({ image, name, description, TopButton, FooterButton, disabledFooterButton, disabledTopButton,
+    onClickCard:handleOnClickCard, onClickButtonFooter:handleOnClickButtonFooter, onClickButtonTop:handleOnClickButtonTop, isSelected, ...restProps }) => {
 
     const topButtonClasses = classNames('relative-button', {'hidden':disabledTopButton});
     const footerButtonClasses = classNames('footer-button', {'hidden':disabledFooterButton});
 
     return (
-        <CardContainer onClick={handleOnClickCard} theme={themeProvider}>
+        <CardContainer onClick={handleOnClickCard} {...restProps}>
             <div className={ topButtonClasses }>
                 <TopButton size={50} onClick={handleOnClickButtonTop} isSelected={isSelected}/>
             </div>

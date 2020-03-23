@@ -1,9 +1,11 @@
 import React from 'react'
 import { ButtonGenericContainer } from './styles';
 
-const ButtonGeneric = ({ theme: themeProvider, onClick:handleOnClick, title }) => {
+const ButtonGeneric = ({ onClick:handleOnClick, title, ...restProps }) => {
     return (
-        <ButtonGenericContainer theme={ themeProvider } onClick={(e)=>{
+        <ButtonGenericContainer
+        {...restProps} //in this line we pass the theme provider
+        onClick={(e)=>{
             e.stopPropagation();
             handleOnClick();
         }}>

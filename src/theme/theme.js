@@ -14,6 +14,7 @@ export const lightTheme = {
     squaredShadow: '20px 20px 60px #bec3c9, -20px -20px 60px #ffffff',
     insetShadow: 'inset 20px 20px 60px #e0e5ec, inset -20px -20px 60px #ffffff',
     iconColorContrast: 'rgb(163,177,198,1)',
+    modalBackground: 'rgba(255, 255, 255, 0.2)',
     ...globalColor
 };
 
@@ -26,6 +27,7 @@ export const darkTheme = {
     squaredShadow: '20px 20px 60px #333436, -20px -20px 60px #454648',
     insetShadow: 'inset 24px 24px 48px #333436, inset -24px -24px 48px #454648',
     iconColorContrast: '#FFF',
+    modalBackground: 'rgba(0, 0, 0, 0.2)',
     ...globalColor
 };
 

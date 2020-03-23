@@ -12,6 +12,7 @@ ModalSimple.propTypes = {
     text: PropTypes.string.isRequired,
     iconColor: PropTypes.string.isRequired,
     iconSize: PropTypes.number.isRequired,
+    open: PropTypes.bool.isRequired,
 };
 
 ModalSimple.defaultProps = {
@@ -23,6 +24,7 @@ ModalSimple.defaultProps = {
     text: 'Lorem....',
     iconColor: '',
     iconSize: 50,
+    open: false,
 };
 
 export default ModalSimple;

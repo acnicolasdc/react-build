@@ -2,8 +2,8 @@ import React from 'react';
 import classNames from 'classnames';
 import { ButtonSwitchContainer } from './styles';
 
-function Switch ({ theme: themeProvider, isToggle, onClick: handleOnClick, IconLeft, IconRight}) {
-    const leftClass = classNames(['icon', { '-active_left':isToggle }]);
+function Switch ({ isToggle, onClick: handleOnClick, IconLeft, IconRight, ...restProps }) {
+    const leftClass = classNames(['icon', { '-active_left': isToggle }]);
     const rightClass = classNames(['icon', { '-active_right': !isToggle }]);
     return (
         <ButtonSwitchContainer
@@ -11,7 +11,8 @@ function Switch ({ theme: themeProvider, isToggle, onClick: handleOnClick, IconL
                 e.stopPropagation();
                 handleOnClick();
             }}
-            theme={ themeProvider }>
+            {...restProps} //in this line we pass the theme provider
+            >
             <IconLeft className={ leftClass }/>
             <IconRight className={ rightClass }/>
         </ButtonSwitchContainer>
