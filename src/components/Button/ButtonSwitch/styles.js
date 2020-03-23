@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { rotation } from 'assets/animations';
 
 export const ButtonSwitchContainer =  styled.button`
     width: 4rem;
@@ -17,6 +18,17 @@ export const ButtonSwitchContainer =  styled.button`
     padding: 0;
     :hover {
         box-shadow: ${props => props.theme.insetShadow};
+    }
+    .icon{
+        color: ${props => props.theme.disabledGray};
+    }
+    .-active_left{
+        animation: ${rotation} ease 1s;
+        color: ${props => props.theme.shinyBlue};
+    }
+    .-active_right{
+        animation: ${rotation} ease 1s;
+        color: ${props => props.theme.shinyYellow};
     }
     p {
         font-size: 1rem;

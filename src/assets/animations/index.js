@@ -17,6 +17,21 @@ export const rotation = keyframes`
     }
 `;
 
+export const scale = keyframes`
+	0% {
+		transform: translate(-50%, -50%) scale(0);
+    }
+	90% {
+		transform: translate(-50%, -50%) scale(1.2);
+	}
+	95% {
+		transform: translate(-50%, -50%) scale(1.1);
+	}
+    100% {
+		transform: translate(-50%, -50%) scale(1);
+    }
+`;
+
 export const pulse = (colors)=> keyframes `
     0% {
 		transform: scale(0.95);

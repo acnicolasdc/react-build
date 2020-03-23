@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { scale, fadeIn } from 'assets/animations';
 
 export const ButtonHeartContainer =  styled.button`
     position: relative;
@@ -22,6 +23,10 @@ export const ButtonHeartContainer =  styled.button`
         height: 50%;
         transform: translate(-50%, -50%);
         width:${props => props.size}px;
+        color: ${props => props.theme.dumbRed};
+    }
+    .-heart_active {
+        animation: ${scale} ease 0.3s, ${fadeIn} ease 0.6s;
     }
 
 `;

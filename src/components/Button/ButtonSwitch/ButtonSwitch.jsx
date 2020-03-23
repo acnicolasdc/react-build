@@ -1,13 +1,19 @@
 import React from 'react';
+import classNames from 'classnames';
 import { ButtonSwitchContainer } from './styles';
 
-function Switch ({ theme: themeProvider, isToggle, onClick: handleOnclick, IconLeft, IconRight}) {
-    const colorLeft = isToggle?'#32afa9':'#FFF';
-    const colorRight = isToggle?'#FFF':'#f0cf85';
+function Switch ({ theme: themeProvider, isToggle, onClick: handleOnClick, IconLeft, IconRight}) {
+    const leftClass = classNames(['icon', { '-active_left':isToggle }]);
+    const rightClass = classNames(['icon', { '-active_right': !isToggle }]);
     return (
-        <ButtonSwitchContainer onClick={handleOnclick} theme={ themeProvider }>
-            <IconLeft color={colorLeft}/>
-            <IconRight color={colorRight}/>
+        <ButtonSwitchContainer
+            onClick={(e)=>{
+                e.stopPropagation();
+                handleOnClick();
+            }}
+            theme={ themeProvider }>
+            <IconLeft className={ leftClass }/>
+            <IconRight className={ rightClass }/>
         </ButtonSwitchContainer>
     );
 }

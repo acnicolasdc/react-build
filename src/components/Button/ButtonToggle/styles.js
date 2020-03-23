@@ -27,4 +27,10 @@ export const ButtonToggleContainer =  styled.button`
         color: ${props => props.theme.textColor};
         padding: 0px 20px;
     }
+    .icon_toggle {
+        color: ${props => props.theme.disabledGray};
+    }
+    .-active {
+        color: ${props => props.theme.shinyBlue};
+    }
 `;

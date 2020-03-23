@@ -1,7 +1,8 @@
 const globalColor = {
     shinyBlue: '#32afa9',
     shinyYellow: '#f0cf85',
-    disabledGray: '#F1F1F0',
+    disabledGray: 'rgba(113, 113, 113, 0.5)',
+    dumbRed: '#e22d48'
 }
 // styles
 export const lightTheme = {

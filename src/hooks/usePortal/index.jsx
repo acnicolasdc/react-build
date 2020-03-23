@@ -19,9 +19,7 @@ function usePortal(id) {
     useEffect(() => {
         const existingParent = document.querySelector(`#${id}`);
         const parentElem = existingParent || createRootElement(id);
-        if (!existingParent) {
-            addRootElement(parentElem);
-        }
+        if (!existingParent)addRootElement(parentElem);
         parentElem.appendChild(rootElemRef.current);
         return function removeElement() {
             rootElemRef.current.remove();

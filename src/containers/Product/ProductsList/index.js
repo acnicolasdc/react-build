@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import ProductList from './ProductList';
-import ProductCardInformation from 'components/Product/ProductCardInformation';
+import ProductCardInformationActions from '../ProductCardInformationActions';
 import ProgressCircle from 'components/Progress/ProgressCircle';
 
 ProductList.propTypes = {
@@ -9,7 +9,7 @@ ProductList.propTypes = {
 };
 
 ProductList.defaultProps = {
-    Item: ProductCardInformation,
+    Item: ProductCardInformationActions,
     Spinner: ProgressCircle,
 };
 

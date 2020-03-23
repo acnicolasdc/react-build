@@ -1,11 +1,17 @@
 import React from 'react';
+import classNames from 'classnames';
 import { ButtonToggleContainer } from './styles';
 
-function ButtonToggle ({ theme: themeProvider, isToggle, onClick: handleOnclick, Icon}) {
-    const handleColor = isToggle?'#32afa9':'rgb(113, 113, 113)';
+function ButtonToggle ({ theme: themeProvider, isToggle, onClick: handleOnClick, Icon}) {
+    const iconClass = classNames(['icon_toggle', { '-active':isToggle }]);
     return (
-        <ButtonToggleContainer onClick={handleOnclick} theme={ themeProvider } toggle={isToggle}>
-            <Icon color={handleColor}/>
+        <ButtonToggleContainer onClick={(e)=>{
+            e.stopPropagation();
+            handleOnClick();
+        }}
+        theme={ themeProvider }
+        toggle={isToggle}>
+            <Icon className={iconClass}/>
         </ButtonToggleContainer>
     );
 }
