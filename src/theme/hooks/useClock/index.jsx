@@ -1,19 +1,16 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
+import useInterval from 'hooks/useInterval';
 import { getStorage } from 'utils/localStorage';
 import { timeManager } from './timeManager';
+import { SET_INTERVAL } from "./constants";
 
 const useClock = (initialTime = new Date(), clockOn) => {
     const [time, setTime] = useState(initialTime);
     const isDark = getStorage('darkTheme');
     const isTime = timeManager(time);
-    useEffect(() => {
-        if(clockOn) {
-            const id = setInterval(() => {
-                setTime(() => new Date());
-            }, 10000);
-            return () => clearInterval(id);
-        }
-    }, [clockOn]);
+    useInterval(() => {
+        setTime(() => new Date());
+    }, clockOn ? SET_INTERVAL : null);
     const response = useMemo(()=> {
         if(isDark === 'true' && !isTime) return false;
         if(isDark === 'false' && isTime) return true;
