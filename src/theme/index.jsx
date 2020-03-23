@@ -1,20 +1,24 @@
-import React, { useState, useLayoutEffect } from 'react'
+import React, { useState, useLayoutEffect } from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import { getStorage, setStorage } from 'utils/localStorage';
 import { lightTheme, darkTheme } from './theme';
 import { GlobalStyle } from './globalStyles';
 import useClock from './hooks/useClock';
 
-export const ThemeContext = React.createContext({ dark: false, auto: false, autoMode: () => {}, toggle: () => {} });
+export const ThemeContext = React.createContext({
+    dark: false,
+    auto: false,
+    modal: false,
+    autoMode: () => {},
+    toggle: () => {}
+});
 
 function ThemeProvider (props) {
+    const [modal, setModal] = useState(false);
     const [dark, setDark] = useState(false);
     const [auto, setAuto] = useState(false);
     const isDarkSite = useClock(new Date(), auto);
-    if(isDarkSite !== null && auto){
-        setDark(isDarkSite);
-        setStorage('darkTheme', isDarkSite);
-    }
+
     useLayoutEffect(() => {
         const lastTheme = getStorage('darkTheme');
         const lastAutoMode = getStorage('autoMode');
@@ -24,25 +28,36 @@ function ThemeProvider (props) {
         setAuto(isAutoMode);
     }, [dark]);
 
-    const toggle = () => {
+    const toggleSwitch = () => {
         _handleTransition();
-        if(auto)toggleAutoMode();
+        if(auto)toggleModeAuto();
         setDark(!dark);
         setStorage('darkTheme', !dark);
     };
 
-    const toggleAutoMode = () => {
-        _handleTransition();
+    const toggleModeAuto = () => {
+        if(!auto)toggleModal();
         setAuto(!auto);
         setStorage('autoMode', !auto);
     };
+
+    const toggleModal = () => {
+        setModal(!modal)
+    }
+
     const _handleTransition = () => {
         const body = document.getElementsByTagName('body')[0];
         body.style.cssText = 'transition: background .5s ease';
     }
 
+    if(isDarkSite !== null && auto){
+        _handleTransition();
+        setDark(isDarkSite);
+        setStorage('darkTheme', isDarkSite);
+    }
+
     return (
-        <ThemeContext.Provider value={{ dark, auto, toggle, autoMode:toggleAutoMode }}>
+        <ThemeContext.Provider value={{ dark, modal, auto, toggleSwitch, toggleModeAuto, toggleModal }}>
             <StyledThemeProvider theme={dark?darkTheme:lightTheme}>
                 <GlobalStyle />
                 {props.children}

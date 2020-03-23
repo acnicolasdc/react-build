@@ -10,8 +10,9 @@ export const lightTheme = {
     titleColor: 'rgb(163,177,198,1)',
     textColor: 'rgb(163,177,198,0.8)',
     placeholderColor: 'rgb(163,177,198,0.6)',
-    squaredShadow: '20px 20px 60px #e0e5ec, -20px -20px 60px #ffffff',
-    insetShadow: 'inset 24px 24px 48px #e0e5ec, inset -24px -24px 48px #ffffff',
+    squaredShadow: '20px 20px 60px #bec3c9, -20px -20px 60px #ffffff',
+    insetShadow: 'inset 20px 20px 60px #e0e5ec, inset -20px -20px 60px #ffffff',
+    iconColorContrast: 'rgb(163,177,198,1)',
     ...globalColor
 };
 
@@ -23,6 +24,7 @@ export const darkTheme = {
     placeholderColor: 'rgb(255,255,255,0.6)',
     squaredShadow: '20px 20px 60px #333436, -20px -20px 60px #454648',
     insetShadow: 'inset 24px 24px 48px #333436, inset -24px -24px 48px #454648',
+    iconColorContrast: '#FFF',
     ...globalColor
 };
 
