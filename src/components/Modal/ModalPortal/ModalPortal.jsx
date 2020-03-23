@@ -1,17 +1,15 @@
 import React from 'react';
-import { createPortal } from 'react-dom';
+import usePortal from "hooks/usePortal";
 import { Overlay } from './styles';
-const modalRoot = document.getElementById('modal-root');
 
 function ModalPortal({ children, open }) {
+    const createPortal = usePortal('modal-root');
     return (
-        // open?(
-            createPortal(
-                <Overlay openModal={open}>
-                    {children}
-                </Overlay>,modalRoot
-            )
-        // ):null
+        createPortal(
+            <Overlay openModal={open}>
+                {children}
+            </Overlay>
+        )
     )
 }
 
