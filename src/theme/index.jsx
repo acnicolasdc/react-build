@@ -9,8 +9,9 @@ export const ThemeContext = React.createContext({
     dark: false,
     auto: false,
     modal: false,
-    autoMode: () => {},
-    toggle: () => {}
+    toggleSwitch: () => {},
+    toggleModeAuto: () => {},
+    toggleModal: () => {},
 });
 
 function ThemeProvider (props) {
