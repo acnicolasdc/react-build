@@ -10,7 +10,6 @@ ModalSimple.propTypes = {
     title: PropTypes.string.isRequired,
     buttonTitle: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
-    iconColor: PropTypes.string.isRequired,
     iconSize: PropTypes.number.isRequired,
     open: PropTypes.bool.isRequired,
 };
@@ -22,7 +21,6 @@ ModalSimple.defaultProps = {
     title: 'Title',
     buttonTitle: 'Close',
     text: 'Lorem....',
-    iconColor: '',
     iconSize: 50,
     open: false,
 };

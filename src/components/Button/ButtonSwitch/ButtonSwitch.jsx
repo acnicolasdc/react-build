@@ -2,9 +2,9 @@ import React from 'react';
 import classNames from 'classnames';
 import { ButtonSwitchContainer } from './styles';
 
-function Switch ({ isToggle, onClick: handleOnClick, IconLeft, IconRight, ...restProps }) {
-    const leftClass = classNames(['icon', { '-active_left': isToggle }]);
-    const rightClass = classNames(['icon', { '-active_right': !isToggle }]);
+function ButtonSwitch ({ isSwitch, onClick: handleOnClick, IconLeft, IconRight, ...restProps }) {
+    const leftClass = classNames(['icon', { '-active_left': isSwitch }]);
+    const rightClass = classNames(['icon', { '-active_right': !isSwitch }]);
     return (
         <ButtonSwitchContainer
             onClick={(e)=>{
@@ -19,4 +19,4 @@ function Switch ({ isToggle, onClick: handleOnClick, IconLeft, IconRight, ...res
     );
 }
 
-export default Switch;
+export default ButtonSwitch;

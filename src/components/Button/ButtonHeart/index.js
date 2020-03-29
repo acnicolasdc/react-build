@@ -11,7 +11,7 @@ ButtonHeart.propTypes = {
 };
 
 ButtonHeart.defaultProps = {
-    size: 100,
+    size: 50,
     isSelected: false,
     onClick: () => {},
     Icon: IoIosHeartEmpty,

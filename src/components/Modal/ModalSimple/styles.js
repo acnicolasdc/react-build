@@ -21,6 +21,7 @@ export const ModalSimpleContainer = styled.div`
         left: 50%;
         transform: translate(-50%, -50%);
         max-width: 500px;
+        min-width: 300px;
         max-height: 500px;
         padding: 20px 20px;
         background-color:${props => props.theme.background};

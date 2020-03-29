@@ -6,13 +6,13 @@ ButtonSwitch.propTypes = {
     IconLeft: PropTypes.func.isRequired,
     IconRight: PropTypes.func.isRequired,
     onClick: PropTypes.func.isRequired,
-    isToggle: PropTypes.bool.isRequired
+    isSwitch: PropTypes.bool.isRequired
 };
 
 ButtonSwitch.defaultProps = {
     IconLeft: IoMdMoon,
     IconRight: IoMdSunny,
-    isToggle: false,
+    isSwitch: false,
     onClick: () => console.log('Without onClick function'),
 };
 
