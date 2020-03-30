@@ -20,7 +20,7 @@ function Layout() {
                 <ModalSimple
                     title='Automatic Dark mode on'
                     text='This is the automatic mode. This mode works depending on your time zone.'
-                    onClick={toggleModal}
+                    Button={()=> <ModalSimple.Button onClick={toggleModal} title='Close'/>}
                     open={modal}
                 />)
             }

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import ButtonGeneric from './ButtonGeneric';
+import CONST from './utils/constants';
 
 ButtonGeneric.propTypes = {
     title: PropTypes.string.isRequired,
@@ -7,7 +8,7 @@ ButtonGeneric.propTypes = {
 };
 
 ButtonGeneric.defaultProps = {
-    title: 'Click me',
+    title: CONST.GENERIC_BUTTON_TITLE,
     onClick: () => {}
 };
 

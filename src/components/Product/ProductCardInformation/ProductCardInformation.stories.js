@@ -1,9 +1,10 @@
 import React from 'react';
-import {lightTheme, darkTheme} from  'theme/theme';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs/react';
 import { DarkMode as DarkModeButton, Default as DefaultButton } from '../../Button/ButtonGeneric/ButtonGeneric.stories';
 import { DarkMode as DarkModeHeart, Default as DefaultHeart } from '../../Button/ButtonHeart/ButtonHeart.stories';
+import ThemeProvider, {lightContextTheme, darkContextTheme} from 'theme/index';
+import CONST from './utils/constants';
 
 import ProductCardInformation from './index';
 
@@ -12,19 +13,19 @@ export default {
   title: 'Card Information',
   decorators: [
     withKnobs,
-    story => <div style={{ padding: '3rem' }}>{story()}</div>
+    story => <ThemeProvider><div style={{ padding: '3rem' }}>{story()}</div></ThemeProvider>
   ],
   excludeStories: /.*Data$/,
 };
 
 export const initialData = {
-  theme: lightTheme,
+  theme: lightContextTheme,
   FooterButton: DefaultButton,
   TopButton: DefaultHeart
 };
 
 export const customData = {
-  theme: darkTheme,
+  theme: darkContextTheme,
   FooterButton: DarkModeButton,
   TopButton: DarkModeHeart
 };
@@ -33,18 +34,24 @@ export const actionsData = {
   onClick: action('onPinTask'),
 };
 
-export const Default = () => <ProductCardInformation
-                                name={text('Product name', 'iPhone 11')}
-                                disabledFooterButton={boolean('Disable Footer Button', false)}
-                                disabledTopButton={boolean('Disable Footer Top', false)}
-                                { ...initialData }
-                                {...actionsData}
-                              />;
+export const Default = () => (
+    <ProductCardInformation
+        name={text('Product name', CONST.GENERIC_PRODUCT_NAME)}
+        description={text('Product description', CONST.GENERIC_PRODUCT_DESCRIPTION)}
+        disabledFooterButton={boolean('Disable Footer Button', CONST.GENERIC_PRODUCT_DISABLED_FOOTER_BUTTON)}
+        disabledTopButton={boolean('Disable Footer Top', CONST.GENERIC_PRODUCT_DISABLED_TOP_BUTTON)}
+        { ...initialData }
+        {...actionsData}
+    />
+);
 
-export const DarkMode = () => <ProductCardInformation
-                                name={text('Product name', 'iPhone 11')}
-                                disabledFooterButton={boolean('Disable Footer Button', false)}
-                                disabledTopButton={boolean('Disable Footer Top', false)}
-                                { ...customData }
-                                {...actionsData}
-                              />;
+export const DarkMode = () => (
+    <ProductCardInformation
+        name={text('Product name', CONST.GENERIC_PRODUCT_NAME)}
+        description={text('Product description', CONST.GENERIC_PRODUCT_DESCRIPTION)}
+        disabledFooterButton={boolean('Disable Footer Button', CONST.GENERIC_PRODUCT_DISABLED_FOOTER_BUTTON)}
+        disabledTopButton={boolean('Disable Footer Top', CONST.GENERIC_PRODUCT_DISABLED_TOP_BUTTON)}
+        { ...customData }
+        {...actionsData}
+    />
+);

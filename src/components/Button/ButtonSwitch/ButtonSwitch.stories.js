@@ -1,7 +1,8 @@
 import React from 'react';
-import {lightTheme, darkTheme} from  'theme/theme';
 import { withKnobs, boolean } from '@storybook/addon-knobs/react';
+import ThemeProvider, {lightContextTheme, darkContextTheme} from 'theme/index';
 import { action } from '@storybook/addon-actions';
+import CONST from './utils/constants';
 
 import ButtonSwitch from './index';
 
@@ -10,23 +11,35 @@ export default {
   title: 'Button Switch',
   decorators: [
     withKnobs,
-    story => <div style={{ padding: '3rem' }}>{story()}</div>
+    story => <ThemeProvider><div style={{ padding: '3rem' }}>{story()}</div></ThemeProvider>
   ],
   excludeStories: /.*Data$/,
 };
 
 export const initialData = {
-  theme: lightTheme,
+  theme: lightContextTheme,
 };
 
 export const customData = {
-  theme: darkTheme,
+  theme: darkContextTheme,
 };
 
 export const actionsData = {
   onClick: action('onPinTask'),
 };
 
-export const Default = () => (<ButtonSwitch isSwitch={boolean('is Switch', false)} { ...initialData } {...actionsData} />);
+export const Default = () => (
+    <ButtonSwitch
+        isSwitch={boolean('is Switch', CONST.GENERIC_BUTTON_SWITCH_IS_SWITCHED)}
+        { ...initialData }
+        {...actionsData}
+    />
+);
 
-export const DarkMode = () => (<ButtonSwitch isSwitch={boolean('is Switch', false)} {...customData }  {...actionsData} />);
+export const DarkMode = () => (
+    <ButtonSwitch
+        isSwitch={boolean('is Switch', CONST.GENERIC_BUTTON_SWITCH_IS_SWITCHED)}
+        {...customData }
+        {...actionsData}
+    />
+);

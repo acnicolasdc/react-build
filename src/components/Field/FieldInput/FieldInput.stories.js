@@ -4,11 +4,11 @@ import { action } from '@storybook/addon-actions';
 import ThemeProvider, {lightContextTheme, darkContextTheme} from 'theme/index';
 import CONST from './utils/constants';
 
-import ButtonGeneric from './index';
+import FieldInput from './index';
 
 export default {
-  component: ButtonGeneric,
-  title: 'Button Generic',
+  component: FieldInput,
+  title: 'Field Input',
   decorators: [
     withKnobs,
     story => <ThemeProvider><div style={{ padding: '3rem' }}>{story()}</div></ThemeProvider>
@@ -25,20 +25,24 @@ export const customData = {
 };
 
 export const actionsData = {
-  onClick: action('Click over button'),
+  onChange: action('Onchange value'),
 };
 
 export const Default = () => (
-    <ButtonGeneric
-        title={text('Generic Button title', CONST.GENERIC_BUTTON_TITLE)}
+    <FieldInput
+        name={text('Field input name', CONST.GENERIC_FIELD_INPUT_NAME)}
+        placeholder={text('Field input placeholder', CONST.GENERIC_FIELD_INPUT_PLACEHOLDER)}
+        value={text('Field input value', CONST.GENERIC_FIELD_INPUT_VALUE)}
         { ...initialData }
         {...actionsData}
     />
 );
 
 export const DarkMode = () => (
-    <ButtonGeneric
-        title={text('Generic Button title', CONST.GENERIC_BUTTON_TITLE)}
+    <FieldInput
+        name={text('Field input name', CONST.GENERIC_FIELD_INPUT_NAME)}
+        placeholder={text('Field input placeholder', CONST.GENERIC_FIELD_INPUT_PLACEHOLDER)}
+        value={text('Field input value', CONST.GENERIC_FIELD_INPUT_VALUE)}
         {...customData }
         {...actionsData}
     />

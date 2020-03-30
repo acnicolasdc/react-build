@@ -1,8 +1,8 @@
 import React from 'react';
-import {lightTheme, darkTheme} from  'theme/theme';
 import { withKnobs, number, text, boolean } from '@storybook/addon-knobs/react';
-import { action } from '@storybook/addon-actions';
+import ThemeProvider, {lightContextTheme, darkContextTheme} from 'theme/index';
 import { DarkMode as DarkModeButton, Default as DefaultButton } from 'components/Button/ButtonGeneric/ButtonGeneric.stories';
+import CONST from './utils/constants';
 
 import ModalSimple from './index';
 
@@ -11,38 +11,37 @@ export default {
   title: 'Modal Simple',
   decorators: [
     withKnobs,
-    story => <div style={{ padding: '3rem'}}>{story()}</div>
+    story => <ThemeProvider><div style={{ padding: '3rem' }}>{story()}</div></ThemeProvider>
   ],
   excludeStories: /.*Data$/,
 };
 
 export const initialData = {
   Button: DefaultButton,
-  theme: lightTheme,
+  theme: lightContextTheme,
 };
 
 export const customData = {
   Button: DarkModeButton,
-  theme: darkTheme,
-};
-export const actionsData = {
-  onClick: action('onPinTask'),
+  theme: darkContextTheme,
 };
 
-export const Default = () => (<ModalSimple
-                                open={boolean('Open Modal', true)}
-                                title={text('Title Modal', 'Automatic Dark mode on')}
-                                text={text('Description Modal', 'This is the automatic mode. This mode works depending on your time zone.')}
-                                iconSize={number('Modal icon Size', 50)}
-                                { ...initialData }
-                                { ...actionsData }
-                              />);
+export const Default = () => (
+    <ModalSimple
+        open={boolean('Open Modal', true)}
+        title={text('Title Modal', CONST.GENERIC_MODAL_SIMPLE_TITLE)}
+        text={text('Description Modal', CONST.GENERIC_MODAL_SIMPLE_TEXT)}
+        iconSize={number('Modal icon Size', CONST.GENERIC_MODAL_SIMPLE_ICON_SIZE)}
+        { ...initialData }
+    />
+);
 
-export const DarkMode = () => (<ModalSimple
-                                open={boolean('Open Modal', true)}
-                                title={text('Title Modal', 'Automatic Dark mode on')}
-                                text={text('Description Modal', 'This is the automatic mode. This mode works depending on your time zone.')}
-                                iconSize={number('Modal icon Size', 50)}
-                                { ...customData }
-                                { ...actionsData }
-/>);
+export const DarkMode = () => (
+    <ModalSimple
+      open={boolean('Open Modal', true)}
+      title={text('Title Modal', CONST.GENERIC_MODAL_SIMPLE_TITLE)}
+      text={text('Description Modal', CONST.GENERIC_MODAL_SIMPLE_TEXT)}
+      iconSize={number('Modal icon Size', CONST.GENERIC_MODAL_SIMPLE_ICON_SIZE)}
+      { ...customData }
+    />
+);

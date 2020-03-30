@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { CardContainer } from './styles';
 
 const ProductCardInformation = ({ image, name, description, TopButton, FooterButton, disabledFooterButton, disabledTopButton,
-    onClickCard:handleOnClickCard, onClickButtonFooter:handleOnClickButtonFooter, onClickButtonTop:handleOnClickButtonTop, isSelected, ...restProps }) => {
+    onClick:handleOnClickCard, ...restProps }) => {
 
     const topButtonClasses = classNames('relative-button', {'hidden':disabledTopButton});
     const footerButtonClasses = classNames('footer-button', {'hidden':disabledFooterButton});
@@ -11,13 +11,15 @@ const ProductCardInformation = ({ image, name, description, TopButton, FooterBut
     return (
         <CardContainer onClick={handleOnClickCard} {...restProps}>
             <div className={ topButtonClasses }>
-                <TopButton size={50} onClick={handleOnClickButtonTop} isSelected={isSelected}/>
+                <TopButton/>
             </div>
-            <h1>{ name }</h1>
-            <img src={ image } alt={ name } />
-            <p>{ description }</p>
+            <h1 className='product-title'>{ name }</h1>
+            <div className='img-container'>
+                <img src={ image } alt={ name } />
+            </div>
+            <p className='product-description'>{ description }</p>
             <div className={ footerButtonClasses }>
-                <FooterButton title='Add to Cart' onClick={handleOnClickButtonFooter}/>
+                <FooterButton/>
             </div>
         </CardContainer>
     )

@@ -7,7 +7,7 @@ export const FormContainer =  styled.form`
     background-color:${props => props.theme.background};
     box-shadow: ${props => props.theme.squaredShadow};
     text-align: center;
-    padding: 15px 20px;
+    padding: 25px 20px;
     fieldset {
         display: grid;
         border: 0;
@@ -15,5 +15,6 @@ export const FormContainer =  styled.form`
     }
     .form-inputs {
         margin-bottom: 15px;
+        width: 100%;
     }
 `;

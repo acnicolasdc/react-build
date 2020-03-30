@@ -22,15 +22,10 @@ function ProductDetail({ Item, Spinner }) {
         newProductInfo[e.target.name] = e.target.value;
         setProduct(newProductInfo);
     }
-
+    if(isLoading)return <LoaderContainer><Spinner /></LoaderContainer>;
     return (
-        isLoading?<LoaderContainer>
-            <Spinner />
-        </LoaderContainer>:
         <ProductDetailContainer>
             <Item
-                disabledFooterButton={true}
-                disabledTopButton={true}
                 name={product.name}
                 description={product.description}
             />

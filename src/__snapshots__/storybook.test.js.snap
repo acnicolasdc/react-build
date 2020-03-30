@@ -38,7 +38,7 @@ exports[`Storyshots Button Generic Dark Mode 1`] = `
     onClick={[Function]}
   >
     <p>
-      Add to Cart
+      Click me
     </p>
   </button>
 </div>
@@ -342,7 +342,7 @@ exports[`Storyshots Card Information Dark Mode 1`] = `
   }
 >
   <div
-    className="sc-AxgMl JJjHl"
+    className="sc-Axmtr cfZGgp"
     onClick={[Function]}
   >
     <div
@@ -374,15 +374,23 @@ exports[`Storyshots Card Information Dark Mode 1`] = `
         </svg>
       </button>
     </div>
-    <h1>
-      iPhone 11
+    <h1
+      className="product-title"
+    >
+      Product title
     </h1>
-    <img
-      alt="iPhone 11"
-      src="https://www.myistore.co.za/media/wysiwyg/iPhone11Pro/iPhone-11-PO-banner_1.png"
-    />
-    <p>
-      The iPhone is a smartphone made by Apple that combines a computer, iPod, digital camera and cellular phone into one device with a touchscreen interface. The iPhone runs the iOS operating system
+    <div
+      className="img-container"
+    >
+      <img
+        alt="Product title"
+        src="https://image.flaticon.com/icons/svg/2306/2306114.svg"
+      />
+    </div>
+    <p
+      className="product-description"
+    >
+      In this section you can put the description of your product, try not to extend it.
     </p>
     <div
       className="footer-button"
@@ -392,7 +400,7 @@ exports[`Storyshots Card Information Dark Mode 1`] = `
         onClick={[Function]}
       >
         <p>
-          Add to Cart
+          Click me
         </p>
       </button>
     </div>
@@ -409,7 +417,7 @@ exports[`Storyshots Card Information Default 1`] = `
   }
 >
   <div
-    className="sc-AxgMl eOoEIw"
+    className="sc-Axmtr hHzkjc"
     onClick={[Function]}
   >
     <div
@@ -441,15 +449,23 @@ exports[`Storyshots Card Information Default 1`] = `
         </svg>
       </button>
     </div>
-    <h1>
-      iPhone 11
+    <h1
+      className="product-title"
+    >
+      Product title
     </h1>
-    <img
-      alt="iPhone 11"
-      src="https://www.myistore.co.za/media/wysiwyg/iPhone11Pro/iPhone-11-PO-banner_1.png"
-    />
-    <p>
-      The iPhone is a smartphone made by Apple that combines a computer, iPod, digital camera and cellular phone into one device with a touchscreen interface. The iPhone runs the iOS operating system
+    <div
+      className="img-container"
+    >
+      <img
+        alt="Product title"
+        src="https://image.flaticon.com/icons/svg/2306/2306114.svg"
+      />
+    </div>
+    <p
+      className="product-description"
+    >
+      In this section you can put the description of your product, try not to extend it.
     </p>
     <div
       className="footer-button"
@@ -467,6 +483,78 @@ exports[`Storyshots Card Information Default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Field Input Dark Mode 1`] = `
+<div
+  style={
+    Object {
+      "padding": "3rem",
+    }
+  }
+>
+  <input
+    className="sc-AxhUy bcWHWJ"
+    name="inputField"
+    onChange={[Function]}
+    placeholder="Placeholder"
+    value=""
+  />
+</div>
+`;
+
+exports[`Storyshots Field Input Default 1`] = `
+<div
+  style={
+    Object {
+      "padding": "3rem",
+    }
+  }
+>
+  <input
+    className="sc-AxhUy dmxucm"
+    name="inputField"
+    onChange={[Function]}
+    placeholder="Placeholder"
+    value=""
+  />
+</div>
+`;
+
+exports[`Storyshots Field TextArea Dark Mode 1`] = `
+<div
+  style={
+    Object {
+      "padding": "3rem",
+    }
+  }
+>
+  <textarea
+    className="sc-AxgMl chVZde"
+    name="inputField"
+    onChange={[Function]}
+    placeholder="Placeholder"
+    value=""
+  />
+</div>
+`;
+
+exports[`Storyshots Field TextArea Default 1`] = `
+<div
+  style={
+    Object {
+      "padding": "3rem",
+    }
+  }
+>
+  <textarea
+    className="sc-AxgMl cbUKPd"
+    name="inputField"
+    onChange={[Function]}
+    placeholder="Placeholder"
+    value=""
+  />
+</div>
+`;
+
 exports[`Storyshots Modal Simple Dark Mode 1`] = `
 <div
   style={
@@ -476,7 +564,7 @@ exports[`Storyshots Modal Simple Dark Mode 1`] = `
   }
 >
   <div
-    className="sc-AxhUy ghaldd -open_modal"
+    className="sc-AxheI gblsyp -open_modal"
   >
     <div
       className="modal_container"
@@ -504,19 +592,19 @@ exports[`Storyshots Modal Simple Dark Mode 1`] = `
       <h3
         className="modal_title"
       >
-        Automatic Dark mode on
+        Modal title
       </h3>
       <p
         className="modal_text"
       >
-        This is the automatic mode. This mode works depending on your time zone.
+        In this section you can put the description of your product, try not to extend it.
       </p>
       <button
         className="sc-AxjAm iuhPQy"
         onClick={[Function]}
       >
         <p>
-          Add to Cart
+          Click me
         </p>
       </button>
     </div>
@@ -533,7 +621,7 @@ exports[`Storyshots Modal Simple Default 1`] = `
   }
 >
   <div
-    className="sc-AxhUy jdNGdR -open_modal"
+    className="sc-AxheI cYudCN -open_modal"
   >
     <div
       className="modal_container"
@@ -561,12 +649,12 @@ exports[`Storyshots Modal Simple Default 1`] = `
       <h3
         className="modal_title"
       >
-        Automatic Dark mode on
+        Modal title
       </h3>
       <p
         className="modal_text"
       >
-        This is the automatic mode. This mode works depending on your time zone.
+        In this section you can put the description of your product, try not to extend it.
       </p>
       <button
         className="sc-AxjAm dmLlNS"
@@ -590,7 +678,7 @@ exports[`Storyshots Progress Circle Dark Mode 1`] = `
   }
 >
   <div
-    className="sc-AxheI ljaNvO"
+    className="sc-AxmLO ghtLLc"
     size={75}
   />
 </div>
@@ -605,7 +693,7 @@ exports[`Storyshots Progress Circle Default 1`] = `
   }
 >
   <div
-    className="sc-AxheI ioQWMe"
+    className="sc-AxmLO ihQTdk"
     size={75}
   />
 </div>

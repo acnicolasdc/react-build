@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { IoIosHeartEmpty , IoIosHeart } from 'react-icons/io';
 import ButtonHeart from './ButtonHeart';
+import CONST from './utils/constants';
 
 ButtonHeart.propTypes = {
     Icon: PropTypes.func.isRequired,
@@ -11,8 +12,8 @@ ButtonHeart.propTypes = {
 };
 
 ButtonHeart.defaultProps = {
-    size: 50,
-    isSelected: false,
+    size: CONST.GENERIC_BUTTON_HEART_SIZE,
+    isSelected: CONST.GENERIC_BUTTON_HEART_IS_SELECTED,
     onClick: () => {},
     Icon: IoIosHeartEmpty,
     IconSelected: IoIosHeart,

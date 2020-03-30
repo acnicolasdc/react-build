@@ -1,6 +1,7 @@
 import React from 'react';
-import {lightTheme, darkTheme} from  'theme/theme';
 import { withKnobs, number } from '@storybook/addon-knobs/react';
+import ThemeProvider, {lightContextTheme, darkContextTheme} from 'theme/index';
+import CONST from './utils/constants';
 
 import ProgressCircle from './index';
 
@@ -9,19 +10,29 @@ export default {
   title: 'Progress Circle',
   decorators: [
     withKnobs,
-    story => <div style={{ padding: '3rem'}}>{story()}</div>
+    story => <ThemeProvider><div style={{ padding: '3rem' }}>{story()}</div></ThemeProvider>
   ],
   excludeStories: /.*Data$/,
 };
 
 export const initialData = {
-  theme: lightTheme,
+  theme: lightContextTheme,
 };
 
 export const customData = {
-  theme: darkTheme,
+  theme: darkContextTheme,
 };
 
-export const Default = () => (<ProgressCircle size={number('Circle Progress size', 75)} { ...initialData } />);
+export const Default = () => (
+    <ProgressCircle
+        size={number('Circle Progress size', CONST.GENERIC_PROGRESS_CIRCLE_SIZE)}
+        {...initialData}
+    />
+);
 
-export const DarkMode = () => (<ProgressCircle size={number('Circle Progress size', 75)} {...customData } />);
+export const DarkMode = () => (
+    <ProgressCircle
+        size={number('Circle Progress size', CONST.GENERIC_PROGRESS_CIRCLE_SIZE)}
+        {...customData}
+    />
+);

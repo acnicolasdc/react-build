@@ -4,11 +4,11 @@ import { action } from '@storybook/addon-actions';
 import ThemeProvider, {lightContextTheme, darkContextTheme} from 'theme/index';
 import CONST from './utils/constants';
 
-import ButtonGeneric from './index';
+import FieldTextArea from './index';
 
 export default {
-  component: ButtonGeneric,
-  title: 'Button Generic',
+  component: FieldTextArea,
+  title: 'Field TextArea',
   decorators: [
     withKnobs,
     story => <ThemeProvider><div style={{ padding: '3rem' }}>{story()}</div></ThemeProvider>
@@ -25,20 +25,24 @@ export const customData = {
 };
 
 export const actionsData = {
-  onClick: action('Click over button'),
+  onChange: action('Onchange value'),
 };
 
 export const Default = () => (
-    <ButtonGeneric
-        title={text('Generic Button title', CONST.GENERIC_BUTTON_TITLE)}
+    <FieldTextArea
+        name={text('Field input name', CONST.GENERIC_FIELD_TEXTAREA_NAME)}
+        placeholder={text('Field input placeholder', CONST.GENERIC_FIELD_TEXTAREA_PLACEHOLDER)}
+        value={text('Field input value', CONST.GENERIC_FIELD_TEXTAREA_VALUE)}
         { ...initialData }
         {...actionsData}
     />
 );
 
 export const DarkMode = () => (
-    <ButtonGeneric
-        title={text('Generic Button title', CONST.GENERIC_BUTTON_TITLE)}
+    <FieldTextArea
+        name={text('Field input name', CONST.GENERIC_FIELD_TEXTAREA_NAME)}
+        placeholder={text('Field input placeholder', CONST.GENERIC_FIELD_TEXTAREA_PLACEHOLDER)}
+        value={text('Field input value', CONST.GENERIC_FIELD_TEXTAREA_VALUE)}
         {...customData }
         {...actionsData}
     />

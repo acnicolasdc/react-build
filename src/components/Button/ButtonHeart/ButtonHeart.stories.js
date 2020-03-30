@@ -1,7 +1,8 @@
 import React from 'react';
-import {lightTheme, darkTheme} from  'theme/theme';
 import { withKnobs, number, boolean } from '@storybook/addon-knobs/react';
+import ThemeProvider, {lightContextTheme, darkContextTheme} from 'theme/index';
 import { action } from '@storybook/addon-actions';
+import CONST from './utils/constants';
 
 import ButtonHeart from './index';
 
@@ -10,7 +11,7 @@ export default {
   title: 'Button Heart',
   decorators: [
     withKnobs,
-    story => <div style={{ padding: '3rem' }}>{story()}</div>
+    story => <ThemeProvider><div style={{ padding: '3rem' }}>{story()}</div></ThemeProvider>
   ],
   excludeStories: /.*Data$/,
 };
@@ -19,5 +20,20 @@ export const actionsData = {
   onClick: action('onPinTask'),
 };
 
-export const Default = () => <ButtonHeart size={number('Button size', 50)} isSelected={boolean('Press Heart', false)} theme={lightTheme} {...actionsData} />;
-export const DarkMode = () => (<ButtonHeart size={number('Button size', 50)} isSelected={boolean('Press Heart', false)} theme={darkTheme}  {...actionsData} />);
+export const Default = () => (
+    <ButtonHeart
+        size={number('Button size', CONST.GENERIC_BUTTON_HEART_SIZE)}
+        isSelected={boolean('Press Heart', CONST.GENERIC_BUTTON_HEART_IS_SELECTED)}
+        theme={lightContextTheme}
+        {...actionsData}
+    />
+);
+
+export const DarkMode = () => (
+    <ButtonHeart
+        size={number('Button size', CONST.GENERIC_BUTTON_HEART_SIZE)}
+        isSelected={boolean('Press Heart', CONST.GENERIC_BUTTON_HEART_IS_SELECTED)}
+        theme={darkContextTheme}
+        {...actionsData}
+    />
+);

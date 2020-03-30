@@ -1,9 +1,9 @@
 import React from 'react'
-import { Input } from './styles';
+import { TextArea } from './styles';
 
-const FormInput = ({ placeholder, name, value, onChange:handleOnChange, ...restProps }) => {
+const FieldTextArea = ({ placeholder, name, value, onChange:handleOnChange, ...restProps }) => {
     return (
-        <Input
+        <TextArea
             {...restProps}
             placeholder={placeholder}
             name={name}
@@ -13,4 +13,4 @@ const FormInput = ({ placeholder, name, value, onChange:handleOnChange, ...restP
     )
 }
 
-export default FormInput;
+export default FieldTextArea;
