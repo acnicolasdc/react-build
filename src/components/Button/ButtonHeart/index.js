@@ -19,4 +19,5 @@ ButtonHeart.defaultProps = {
     IconSelected: IoIosHeart,
 }
 
+export const constants = CONST;
 export default ButtonHeart;

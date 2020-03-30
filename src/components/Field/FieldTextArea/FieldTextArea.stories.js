@@ -2,9 +2,8 @@ import React from 'react';
 import { withKnobs, text } from '@storybook/addon-knobs/react';
 import { action } from '@storybook/addon-actions';
 import ThemeProvider, {lightContextTheme, darkContextTheme} from 'theme/index';
-import CONST from './utils/constants';
 
-import FieldTextArea from './index';
+import FieldTextArea, { constants } from './index';
 
 export default {
   component: FieldTextArea,
@@ -30,9 +29,9 @@ export const actionsData = {
 
 export const Default = () => (
     <FieldTextArea
-        name={text('Field input name', CONST.GENERIC_FIELD_TEXTAREA_NAME)}
-        placeholder={text('Field input placeholder', CONST.GENERIC_FIELD_TEXTAREA_PLACEHOLDER)}
-        value={text('Field input value', CONST.GENERIC_FIELD_TEXTAREA_VALUE)}
+        name={text('Field input name', constants.GENERIC_FIELD_TEXTAREA_NAME)}
+        placeholder={text('Field input placeholder', constants.GENERIC_FIELD_TEXTAREA_PLACEHOLDER)}
+        value={text('Field input value', constants.GENERIC_FIELD_TEXTAREA_VALUE)}
         { ...initialData }
         {...actionsData}
     />
@@ -40,9 +39,9 @@ export const Default = () => (
 
 export const DarkMode = () => (
     <FieldTextArea
-        name={text('Field input name', CONST.GENERIC_FIELD_TEXTAREA_NAME)}
-        placeholder={text('Field input placeholder', CONST.GENERIC_FIELD_TEXTAREA_PLACEHOLDER)}
-        value={text('Field input value', CONST.GENERIC_FIELD_TEXTAREA_VALUE)}
+        name={text('Field input name', constants.GENERIC_FIELD_TEXTAREA_NAME)}
+        placeholder={text('Field input placeholder', constants.GENERIC_FIELD_TEXTAREA_PLACEHOLDER)}
+        value={text('Field input value', constants.GENERIC_FIELD_TEXTAREA_VALUE)}
         {...customData }
         {...actionsData}
     />

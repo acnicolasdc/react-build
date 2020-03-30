@@ -15,4 +15,6 @@ FieldTextArea.defaultProps = {
     value: CONST.GENERIC_FIELD_TEXTAREA_VALUE,
     onChange: () => console.log('without event')
 };
+
+export const constants = CONST;
 export default FieldTextArea;

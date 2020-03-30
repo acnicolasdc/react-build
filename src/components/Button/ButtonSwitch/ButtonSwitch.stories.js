@@ -1,10 +1,9 @@
 import React from 'react';
 import { withKnobs, boolean } from '@storybook/addon-knobs/react';
-import ThemeProvider, {lightContextTheme, darkContextTheme} from 'theme/index';
 import { action } from '@storybook/addon-actions';
-import CONST from './utils/constants';
+import ThemeProvider, {lightContextTheme, darkContextTheme} from 'theme/index';
 
-import ButtonSwitch from './index';
+import ButtonSwitch, { constants } from './index';
 
 export default {
   component: ButtonSwitch,
@@ -30,7 +29,7 @@ export const actionsData = {
 
 export const Default = () => (
     <ButtonSwitch
-        isSwitch={boolean('is Switch', CONST.GENERIC_BUTTON_SWITCH_IS_SWITCHED)}
+        isSwitch={boolean('is Switch', constants.GENERIC_BUTTON_SWITCH_IS_SWITCHED)}
         { ...initialData }
         {...actionsData}
     />
@@ -38,7 +37,7 @@ export const Default = () => (
 
 export const DarkMode = () => (
     <ButtonSwitch
-        isSwitch={boolean('is Switch', CONST.GENERIC_BUTTON_SWITCH_IS_SWITCHED)}
+        isSwitch={boolean('is Switch', constants.GENERIC_BUTTON_SWITCH_IS_SWITCHED)}
         {...customData }
         {...actionsData}
     />

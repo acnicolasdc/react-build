@@ -12,4 +12,5 @@ ButtonGeneric.defaultProps = {
     onClick: () => {}
 };
 
+export const constants = CONST;
 export default ButtonGeneric;

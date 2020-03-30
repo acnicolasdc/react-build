@@ -2,9 +2,7 @@ import React from 'react';
 import { withKnobs, text } from '@storybook/addon-knobs/react';
 import { action } from '@storybook/addon-actions';
 import ThemeProvider, {lightContextTheme, darkContextTheme} from 'theme/index';
-import CONST from './utils/constants';
-
-import ButtonGeneric from './index';
+import ButtonGeneric, { constants } from './index';
 
 export default {
   component: ButtonGeneric,
@@ -30,7 +28,7 @@ export const actionsData = {
 
 export const Default = () => (
     <ButtonGeneric
-        title={text('Generic Button title', CONST.GENERIC_BUTTON_TITLE)}
+        title={text('Generic Button title', constants.GENERIC_BUTTON_TITLE)}
         { ...initialData }
         {...actionsData}
     />
@@ -38,7 +36,7 @@ export const Default = () => (
 
 export const DarkMode = () => (
     <ButtonGeneric
-        title={text('Generic Button title', CONST.GENERIC_BUTTON_TITLE)}
+        title={text('Generic Button title', constants.GENERIC_BUTTON_TITLE)}
         {...customData }
         {...actionsData}
     />

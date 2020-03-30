@@ -15,4 +15,5 @@ ButtonToggle.defaultProps = {
     onClick: () => console.log('Without onClick function'),
 };
 
+export const constants = CONST;
 export default ButtonToggle;

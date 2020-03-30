@@ -342,7 +342,7 @@ exports[`Storyshots Card Information Dark Mode 1`] = `
   }
 >
   <div
-    className="sc-Axmtr cfZGgp"
+    className="sc-AxmLO lhlaHo"
     onClick={[Function]}
   >
     <div
@@ -417,7 +417,7 @@ exports[`Storyshots Card Information Default 1`] = `
   }
 >
   <div
-    className="sc-Axmtr hHzkjc"
+    className="sc-AxmLO hqPxIB"
     onClick={[Function]}
   >
     <div
@@ -555,6 +555,127 @@ exports[`Storyshots Field TextArea Default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Form Vertical Dark Mode 1`] = `
+<div
+  style={
+    Object {
+      "padding": "3rem",
+    }
+  }
+>
+  <form
+    className="sc-AxheI bjqDlO"
+    onSubmit={[Function]}
+  >
+    <fieldset>
+      <div
+        className="form-inputs"
+      >
+        <input
+          className="sc-AxhUy bcWHWJ"
+          name="inputField"
+          onChange={[Function]}
+          placeholder="Placeholder"
+          value=""
+        />
+      </div>
+      <div
+        className="form-inputs"
+      >
+        <textarea
+          className="sc-AxgMl chVZde"
+          name="inputField"
+          onChange={[Function]}
+          placeholder="Placeholder"
+          value=""
+        />
+      </div>
+      <div
+        className="form-inputs"
+      >
+        <button
+          className="sc-AxjAm iuhPQy"
+          onClick={[Function]}
+        >
+          <p>
+            Click me
+          </p>
+        </button>
+      </div>
+    </fieldset>
+  </form>
+</div>
+`;
+
+exports[`Storyshots Form Vertical Default 1`] = `
+<div
+  style={
+    Object {
+      "padding": "3rem",
+    }
+  }
+>
+  <form
+    className="sc-AxheI evmhbb"
+    onSubmit={[Function]}
+  >
+    <fieldset>
+      <div
+        className="form-inputs"
+      >
+        <input
+          className="sc-AxhUy dmxucm"
+          name="inputField"
+          onChange={[Function]}
+          placeholder="Placeholder"
+          value=""
+        />
+      </div>
+      <div
+        className="form-inputs"
+      >
+        <textarea
+          className="sc-AxgMl cbUKPd"
+          name="inputField"
+          onChange={[Function]}
+          placeholder="Placeholder"
+          value=""
+        />
+      </div>
+      <div
+        className="form-inputs"
+      >
+        <button
+          className="sc-AxjAm dmLlNS"
+          onClick={[Function]}
+        >
+          <p>
+            Click me
+          </p>
+        </button>
+      </div>
+    </fieldset>
+  </form>
+</div>
+`;
+
+exports[`Storyshots Form Vertical Empty 1`] = `
+<div
+  style={
+    Object {
+      "padding": "3rem",
+    }
+  }
+>
+  <form
+    className="sc-AxheI evmhbb"
+    onSubmit={[Function]}
+  >
+    <fieldset />
+  </form>
+</div>
+`;
+
 exports[`Storyshots Modal Simple Dark Mode 1`] = `
 <div
   style={
@@ -564,7 +685,7 @@ exports[`Storyshots Modal Simple Dark Mode 1`] = `
   }
 >
   <div
-    className="sc-AxheI gblsyp -open_modal"
+    className="sc-Axmtr gTLIMi -open_modal"
   >
     <div
       className="modal_container"
@@ -621,7 +742,7 @@ exports[`Storyshots Modal Simple Default 1`] = `
   }
 >
   <div
-    className="sc-AxheI cYudCN -open_modal"
+    className="sc-Axmtr hfbDbK -open_modal"
   >
     <div
       className="modal_container"
@@ -678,7 +799,7 @@ exports[`Storyshots Progress Circle Dark Mode 1`] = `
   }
 >
   <div
-    className="sc-AxmLO ghtLLc"
+    className="sc-fzozJi iEJUil"
     size={75}
   />
 </div>
@@ -693,7 +814,7 @@ exports[`Storyshots Progress Circle Default 1`] = `
   }
 >
   <div
-    className="sc-AxmLO ihQTdk"
+    className="sc-fzozJi hSmkCB"
     size={75}
   />
 </div>

@@ -15,4 +15,6 @@ FieldInput.defaultProps = {
     value: CONST.GENERIC_FIELD_INPUT_VALUE,
     onChange: () => console.log('without event')
 };
+
+export const constants = CONST;
 export default FieldInput;

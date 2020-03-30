@@ -25,4 +25,6 @@ ModalSimple.defaultProps = {
 };
 
 ModalSimple.Button = ButtonGeneric;
+
+export const constants = CONST;
 export default ModalSimple;

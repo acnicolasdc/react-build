@@ -6,7 +6,7 @@ import { DarkMode as FieldInputDarkMode, Default as FieldInputDefault} from 'com
 import { DarkMode as FieldTextAreaDarkMode, Default as FieldTextAreaDefault} from 'components/Field/FieldTextArea/FieldTextArea.stories';
 import { DarkMode as DarkModeButton, Default as DefaultButton } from '../../Button/ButtonGeneric/ButtonGeneric.stories';
 
-import FormVertical from './index';
+import FormVertical, { constants } from './index';
 
 export default {
   component: FormVertical,
@@ -39,6 +39,16 @@ export const customData = {
 export const actionsData = {
   onSubmit: action('Send Data'),
 };
+
+
+
+export const Empty = () => (
+  <FormVertical
+      theme={lightContextTheme}
+      render={constants.GENERIC_FORM_VERTICAL_RENDER}
+      {...actionsData}
+  />
+);
 
 export const Default = () => (
     <FormVertical

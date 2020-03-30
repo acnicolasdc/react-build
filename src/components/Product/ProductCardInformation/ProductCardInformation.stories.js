@@ -4,9 +4,8 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs/react';
 import { DarkMode as DarkModeButton, Default as DefaultButton } from '../../Button/ButtonGeneric/ButtonGeneric.stories';
 import { DarkMode as DarkModeHeart, Default as DefaultHeart } from '../../Button/ButtonHeart/ButtonHeart.stories';
 import ThemeProvider, {lightContextTheme, darkContextTheme} from 'theme/index';
-import CONST from './utils/constants';
 
-import ProductCardInformation from './index';
+import ProductCardInformation, { constants } from './index';
 
 export default {
   component: ProductCardInformation,
@@ -36,10 +35,10 @@ export const actionsData = {
 
 export const Default = () => (
     <ProductCardInformation
-        name={text('Product name', CONST.GENERIC_PRODUCT_NAME)}
-        description={text('Product description', CONST.GENERIC_PRODUCT_DESCRIPTION)}
-        disabledFooterButton={boolean('Disable Footer Button', CONST.GENERIC_PRODUCT_DISABLED_FOOTER_BUTTON)}
-        disabledTopButton={boolean('Disable Footer Top', CONST.GENERIC_PRODUCT_DISABLED_TOP_BUTTON)}
+        name={text('Product name', constants.GENERIC_PRODUCT_NAME)}
+        description={text('Product description', constants.GENERIC_PRODUCT_DESCRIPTION)}
+        disabledFooterButton={boolean('Disable Footer Button', constants.GENERIC_PRODUCT_DISABLED_FOOTER_BUTTON)}
+        disabledTopButton={boolean('Disable Footer Top', constants.GENERIC_PRODUCT_DISABLED_TOP_BUTTON)}
         { ...initialData }
         {...actionsData}
     />
@@ -47,10 +46,10 @@ export const Default = () => (
 
 export const DarkMode = () => (
     <ProductCardInformation
-        name={text('Product name', CONST.GENERIC_PRODUCT_NAME)}
-        description={text('Product description', CONST.GENERIC_PRODUCT_DESCRIPTION)}
-        disabledFooterButton={boolean('Disable Footer Button', CONST.GENERIC_PRODUCT_DISABLED_FOOTER_BUTTON)}
-        disabledTopButton={boolean('Disable Footer Top', CONST.GENERIC_PRODUCT_DISABLED_TOP_BUTTON)}
+        name={text('Product name', constants.GENERIC_PRODUCT_NAME)}
+        description={text('Product description', constants.GENERIC_PRODUCT_DESCRIPTION)}
+        disabledFooterButton={boolean('Disable Footer Button', constants.GENERIC_PRODUCT_DISABLED_FOOTER_BUTTON)}
+        disabledTopButton={boolean('Disable Footer Top', constants.GENERIC_PRODUCT_DISABLED_TOP_BUTTON)}
         { ...customData }
         {...actionsData}
     />

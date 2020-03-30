@@ -10,4 +10,5 @@ ProgressCircle.defaultProps = {
     size: CONST.GENERIC_PROGRESS_CIRCLE_SIZE,
 };
 
+export const constants = CONST;
 export default ProgressCircle;

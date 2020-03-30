@@ -2,9 +2,8 @@ import React from 'react';
 import { withKnobs, number, text, boolean } from '@storybook/addon-knobs/react';
 import ThemeProvider, {lightContextTheme, darkContextTheme} from 'theme/index';
 import { DarkMode as DarkModeButton, Default as DefaultButton } from 'components/Button/ButtonGeneric/ButtonGeneric.stories';
-import CONST from './utils/constants';
 
-import ModalSimple from './index';
+import ModalSimple, { constants } from './index';
 
 export default {
   component: ModalSimple,
@@ -29,9 +28,9 @@ export const customData = {
 export const Default = () => (
     <ModalSimple
         open={boolean('Open Modal', true)}
-        title={text('Title Modal', CONST.GENERIC_MODAL_SIMPLE_TITLE)}
-        text={text('Description Modal', CONST.GENERIC_MODAL_SIMPLE_TEXT)}
-        iconSize={number('Modal icon Size', CONST.GENERIC_MODAL_SIMPLE_ICON_SIZE)}
+        title={text('Title Modal', constants.GENERIC_MODAL_SIMPLE_TITLE)}
+        text={text('Description Modal', constants.GENERIC_MODAL_SIMPLE_TEXT)}
+        iconSize={number('Modal icon Size', constants.GENERIC_MODAL_SIMPLE_ICON_SIZE)}
         { ...initialData }
     />
 );
@@ -39,9 +38,9 @@ export const Default = () => (
 export const DarkMode = () => (
     <ModalSimple
       open={boolean('Open Modal', true)}
-      title={text('Title Modal', CONST.GENERIC_MODAL_SIMPLE_TITLE)}
-      text={text('Description Modal', CONST.GENERIC_MODAL_SIMPLE_TEXT)}
-      iconSize={number('Modal icon Size', CONST.GENERIC_MODAL_SIMPLE_ICON_SIZE)}
+      title={text('Title Modal', constants.GENERIC_MODAL_SIMPLE_TITLE)}
+      text={text('Description Modal', constants.GENERIC_MODAL_SIMPLE_TEXT)}
+      iconSize={number('Modal icon Size', constants.GENERIC_MODAL_SIMPLE_ICON_SIZE)}
       { ...customData }
     />
 );

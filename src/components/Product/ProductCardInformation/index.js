@@ -28,4 +28,6 @@ ProductCardInformation.defaultProps = {
 
 ProductCardInformation.FooterButton = ButtonGeneric;
 ProductCardInformation.TopButton = ButtonHeart;
+
+export const constants = CONST;
 export default ProductCardInformation;
