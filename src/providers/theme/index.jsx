@@ -25,14 +25,14 @@ function ThemeProvider (props) {
     useLayoutEffect(() => {
         const lastTheme = getStorage('darkTheme');
         const lastAutoMode = getStorage('autoMode');
-        const isDarkMode = lastTheme === 'true' ? true : false;
-        const isAutoMode= lastAutoMode === 'true' ? true : false;
+        const isDarkMode = lastTheme === 'true';
+        const isAutoMode = lastAutoMode === 'true';
         setDark(isDarkMode);
         setAuto(isAutoMode);
     }, [dark]);
 
     const toggleSwitch = () => {
-        _handleTransition();
+        handleTransition();
         if(auto)toggleModeAuto();
         setDark(!dark);
         setStorage('darkTheme', !dark);
@@ -48,13 +48,13 @@ function ThemeProvider (props) {
         setModal(!modal)
     }
 
-    const _handleTransition = () => {
+    const handleTransition = () => {
         const body = document.getElementsByTagName('body')[0];
         body.style.cssText = 'transition: background .5s ease';
     }
 
     if(isDarkSite !== null && auto){
-        _handleTransition();
+        handleTransition();
         setDark(isDarkSite);
         setStorage('darkTheme', isDarkSite);
     }

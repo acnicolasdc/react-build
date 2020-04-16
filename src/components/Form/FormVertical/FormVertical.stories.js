@@ -1,7 +1,7 @@
 import React from 'react';
 import { withKnobs } from '@storybook/addon-knobs/react';
 import { action } from '@storybook/addon-actions';
-import ThemeProvider, {lightContextTheme, darkContextTheme} from 'theme/index';
+import ThemeProvider, {lightContextTheme, darkContextTheme} from 'providers/theme';
 import { DarkMode as FieldInputDarkMode, Default as FieldInputDefault} from 'components/Field/FieldInput/FieldInput.stories';
 import { DarkMode as FieldTextAreaDarkMode, Default as FieldTextAreaDefault} from 'components/Field/FieldTextArea/FieldTextArea.stories';
 import { DarkMode as DarkModeButton, Default as DefaultButton } from '../../Button/ButtonGeneric/ButtonGeneric.stories';

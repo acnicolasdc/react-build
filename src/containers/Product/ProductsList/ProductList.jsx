@@ -7,14 +7,12 @@ function ProductsList({ Item, Spinner }) {
     useEffect(() => {
         setIsLoading(true);
         setTimeout(() =>{
-            setProductsList([0,1,2,3,4]);
+            setProductsList([0,1,2,3,4,5,6,7]);
             setIsLoading(false);
-        },1000);
+        },500);
     }, []);
     const _getAllProducts = () => productsList.map(product => (
-            <div className="list-element" key={product}>
-                <Item/>
-            </div>
+            <Item key={product}/>
         )
     );
 

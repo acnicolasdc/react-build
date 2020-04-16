@@ -1,10 +1,9 @@
 import React from 'react'
 import { Input } from './styles';
 
-const FieldInput = ({ placeholder, name, value, onChange:handleOnChange, ...restProps }) => {
+const FieldInput = ({ placeholder, name, value, onChange:handleOnChange }) => {
     return (
         <Input
-            {...restProps}
             placeholder={placeholder}
             name={name}
             onChange={handleOnChange}

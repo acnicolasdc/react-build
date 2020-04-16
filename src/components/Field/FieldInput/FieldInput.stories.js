@@ -1,7 +1,7 @@
 import React from 'react';
 import { withKnobs, text } from '@storybook/addon-knobs/react';
 import { action } from '@storybook/addon-actions';
-import ThemeProvider, {lightContextTheme, darkContextTheme} from 'theme/index';
+import ThemeProvider, {lightContextTheme, darkContextTheme} from 'providers/theme';
 
 import FieldInput, { constants } from './index';
 

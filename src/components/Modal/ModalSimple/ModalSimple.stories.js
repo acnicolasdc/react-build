@@ -1,6 +1,6 @@
 import React from 'react';
 import { withKnobs, number, text, boolean } from '@storybook/addon-knobs/react';
-import ThemeProvider, {lightContextTheme, darkContextTheme} from 'theme/index';
+import ThemeProvider, {lightContextTheme, darkContextTheme} from 'providers/theme';
 import { DarkMode as DarkModeButton, Default as DefaultButton } from 'components/Button/ButtonGeneric/ButtonGeneric.stories';
 
 import ModalSimple, { constants } from './index';

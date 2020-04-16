@@ -4,8 +4,9 @@ import usePortal from "hooks/usePortal";
 import ButtonSwitch from 'components/Button/ButtonSwitch';
 import ButtonToggle from 'components/Button/ButtonToggle';
 import ModalSimple from 'components/Modal/ModalSimple';
-import { ThemeContext } from 'theme/index';
+import { ThemeContext } from 'providers/theme';
 import { DarkModeContainer } from './styles';
+
 function Layout() {
     const createPortal = usePortal('modal-root');
     const { dark, modal, auto, toggleSwitch, toggleModal, toggleModeAuto } = useContext(ThemeContext);

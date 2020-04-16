@@ -3,13 +3,13 @@ import classNames from 'classnames';
 import { CardContainer } from './styles';
 
 const ProductCardInformation = ({ image, name, description, TopButton, FooterButton, disabledFooterButton, disabledTopButton,
-    onClick:handleOnClickCard, ...restProps }) => {
+    onClick:handleOnClickCard }) => {
 
     const topButtonClasses = classNames('relative-button', {'hidden':disabledTopButton});
     const footerButtonClasses = classNames('footer-button', {'hidden':disabledFooterButton});
 
     return (
-        <CardContainer onClick={handleOnClickCard} {...restProps}>
+        <CardContainer onClick={handleOnClickCard}>
             <div className={ topButtonClasses }>
                 <TopButton/>
             </div>

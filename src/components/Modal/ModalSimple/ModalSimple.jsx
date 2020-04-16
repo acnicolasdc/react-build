@@ -2,10 +2,10 @@ import React from 'react'
 import classNames from 'classnames';
 import { ModalSimpleContainer } from './styles';
 
-function ModalSimple({ Icon, Button, text, title, iconSize, open, ...restProps }) {
+function ModalSimple({ Icon, Button, text, title, iconSize, open }) {
     const openModal = classNames({ '-open_modal': open });
     return (
-            <ModalSimpleContainer className={openModal} {...restProps}>
+            <ModalSimpleContainer className={openModal}>
                 <div className='modal_container'>
                     <Icon className='icon_rotate' size={iconSize}/>
                     <h3 className='modal_title'>{title}</h3>

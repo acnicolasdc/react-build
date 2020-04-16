@@ -1,6 +1,6 @@
 import React from 'react';
 import { withKnobs, number } from '@storybook/addon-knobs/react';
-import ThemeProvider, {lightContextTheme, darkContextTheme} from 'theme/index';
+import ThemeProvider, {lightContextTheme, darkContextTheme} from 'providers/theme';
 
 import ProgressCircle, { constants } from './index';
 

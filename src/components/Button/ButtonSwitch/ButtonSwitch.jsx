@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { ButtonSwitchContainer } from './styles';
 
-function ButtonSwitch ({ isSwitch, onClick: handleOnClick, IconLeft, IconRight, ...restProps }) {
+function ButtonSwitch ({ isSwitch, onClick: handleOnClick, IconLeft, IconRight }) {
     const leftClass = classNames(['icon', { '-active_left': isSwitch }]);
     const rightClass = classNames(['icon', { '-active_right': !isSwitch }]);
     return (
@@ -10,9 +10,7 @@ function ButtonSwitch ({ isSwitch, onClick: handleOnClick, IconLeft, IconRight, 
             onClick={(e)=>{
                 e.stopPropagation();
                 handleOnClick();
-            }}
-            {...restProps} //in this line we pass the theme provider
-            >
+            }}>
             <IconLeft className={ leftClass }/>
             <IconRight className={ rightClass }/>
         </ButtonSwitchContainer>

@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs/react';
 import { DarkMode as DarkModeButton, Default as DefaultButton } from '../../Button/ButtonGeneric/ButtonGeneric.stories';
 import { DarkMode as DarkModeHeart, Default as DefaultHeart } from '../../Button/ButtonHeart/ButtonHeart.stories';
-import ThemeProvider, {lightContextTheme, darkContextTheme} from 'theme/index';
+import ThemeProvider, {lightContextTheme, darkContextTheme} from 'providers/theme';
 
 import ProductCardInformation, { constants } from './index';
 
