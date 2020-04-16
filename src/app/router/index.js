@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import Main from './Main';
 // Routes
+import NotFound from 'pages/NotFound';
 import AboutProduct from 'pages/AboutProduct';
 import Home, { routes as homeRoutes } from 'pages/Home';
 
@@ -16,16 +17,20 @@ Main.propTypes = {
 Main.defaultProps = {
     routes: [
         {
-            path: '/',
-            private: true,
-            RouteComponent: Home,
-            //routes: homeRoutes
-        },
-        {
             path: 'about',
             private: false,
             RouteComponent: AboutProduct,
+        },
+        {
+            path: '/',
+            private: true,
+            RouteComponent: Home,
             routes: homeRoutes
+        },
+        {
+            path: '*',
+            private: false,
+            RouteComponent: NotFound,
         },
     ],
 };

@@ -1,36 +1,44 @@
-import React, { useContext } from 'react';
+import React, { useContext, useCallback } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { SessionContext } from 'providers/session';
+
+const EMPTY_ARRAY = 0;
 
 function Main({ routes }) {
     const { session } = useContext(SessionContext);
 
-    const handlePathGenerate = (path, pathOwner) => {
-        if(pathOwner !== ''){
-            if(pathOwner === '/') return `/${path}`
-            return `/${pathOwner}/${path}`;
+    const handlerPathManager = (path, ownerPath = '') => {
+        if(ownerPath !== ''){
+            if(path === '/' && ownerPath === '/') return '/';
+            if(ownerPath === '/') return `/${path}`;
+            return `/${ownerPath}/${path}`;
         }
+        if(path === '*' || path === '/') return `${path}`;
         return `/${path}`;
     }
-
-    const handleRoutes = (localRoute, RouteOwner = null, pathOwner = '') => {
-        return localRoute.map(({path, routes, private:loginRequired, RouteComponent}, index) => {
-            if(loginRequired && !session)return null;
-            if(routes && routes.length > 0) return handleRoutes(routes, RouteComponent, path);
-            const fullPath = handlePathGenerate(path, pathOwner);
+    const routerManager = useCallback((arrayRoutes, ownerPath = '') => {
+        return arrayRoutes.map(( {path, routes, private: loginRequired, RouteComponent }, index ) => {
+            const fullPath = handlerPathManager(path, ownerPath);
+            if(loginRequired && !session) return null;
             return (
-                <Switch key={index}>
-                    { RouteOwner&& <Route exact path={`/${pathOwner}`}><RouteOwner /></Route>}
-                    <Route exact path={`${fullPath}`} >
-                        <RouteComponent />
-                    </Route>
-                </Switch>
-            );
+                <Route path={`${fullPath}`} key={index}>
+                    {
+                        (routes && routes.length > EMPTY_ARRAY)?(
+                            <Switch>
+                                {routerManager([...routes, {RouteComponent, path, private: loginRequired}], path)}
+                            </Switch>
+                        ):( <RouteComponent /> )
+                    }
+                </Route>
+            )
         });
-    }
+    }, [session]);
+
     return (
         <BrowserRouter>
-            {handleRoutes(routes)}
+            <Switch>
+                {routerManager(routes)}
+            </Switch>
         </BrowserRouter>
     )
 }
