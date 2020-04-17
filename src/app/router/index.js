@@ -26,20 +26,20 @@ Main.propTypes = {
 Main.defaultProps = {
     routes: {
         private:[
-                {
-                    path: 'about',
-                    RouteComponent: AboutProduct,
-                },
-                {
-                    path: 'home',
-                    owner: true,
-                    RouteComponent: Home, // must be an unique React Component, if you assign the same component the route shouldn't work fine
-                    routes: homeRoutes
-                },
-                {
-                    path: '*',
-                    RouteComponent: NotFound,
-                },
+            {
+                path: 'about',
+                RouteComponent: AboutProduct,
+            },
+            {
+                path: 'home',
+                owner: true,
+                RouteComponent: Home, // must be an unique React Component, if you assign the same component the route shouldn't work fine
+                routes: homeRoutes
+            },
+            {
+                path: '*',
+                RouteComponent: NotFound,
+            },
         ],
         public:[
             {
