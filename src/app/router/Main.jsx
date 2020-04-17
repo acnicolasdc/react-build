@@ -10,6 +10,7 @@ function Main({ routes }) {
     const handlerPathManager = (path, ownerPath = '') => {
         if(ownerPath !== ''){
             if(path === '/' && ownerPath === '/') return '/';
+            if(path ===  ownerPath) return `/${path}`;
             if(ownerPath === '/') return `/${path}`;
             return `/${ownerPath}/${path}`;
         }
@@ -17,23 +18,26 @@ function Main({ routes }) {
         return `/${path}`;
     }
 
-    const routerManager = useCallback((arrayRoutes, ownerPath = '') => {
-        return arrayRoutes.map(( {path, routes, private: loginRequired, RouteComponent }, index ) => {
-            const fullPath = handlerPathManager(path, ownerPath);
-            if(loginRequired && !session) return null;
+    const routerManager = useCallback((arrayRoutes = [], ownerPath = '') => {
+        let dynamicRoutes = session?routes.private:routes.public;
+        if(arrayRoutes.length > EMPTY_ARRAY) dynamicRoutes = arrayRoutes;
+        const finalRoutes =  dynamicRoutes.map(( {path, owner, routes, private: loginRequired, RouteComponent }, index ) => {
+            const pathToUse = owner?'/':path;
+            const fullPath = handlerPathManager(pathToUse, ownerPath);
             return (
                 <Route path={`${fullPath}`} key={index}>
                     {
                         (routes && routes.length > EMPTY_ARRAY)?(
                             <Switch>
-                                {routerManager([...routes, {RouteComponent, path, private: loginRequired}], path)}
+                                {routerManager([...routes, {RouteComponent, owner, path: pathToUse, private: loginRequired}], pathToUse)}
                             </Switch>
                         ):( <RouteComponent /> )
                     }
                 </Route>
             )
         });
-    }, [session]);
+        return finalRoutes;
+    }, [session, routes]);
     function onRenderCallback(
         id, // the "id" prop of the Profiler tree that has just committed
         phase, // either "mount" (if the tree just mounted) or "update" (if it re-rendered)
@@ -47,19 +51,19 @@ function Main({ routes }) {
         console.log(id)
         console.log(phase)
         console.log(actualDuration)
-        console.log(baseDuration)
-        console.log(startTime)
-        console.log(commitTime)
-        console.log(interactions)
+        // console.log(baseDuration)
+        // console.log(startTime)
+        // console.log(commitTime)
+        // console.log(interactions)
       }
     return (
         <Profiler id="Navigation" onRender={onRenderCallback}>
         <BrowserRouter>
             <Switch>
-                {routerManager(routes)}
+                {routerManager()}
             </Switch>
         </BrowserRouter>
         </Profiler>
     )
 }
-export default Main;
+export default React.memo(Main);
