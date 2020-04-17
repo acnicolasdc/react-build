@@ -18,12 +18,12 @@ Main.defaultProps = {
     routes: [
         {
             path: 'about',
-            private: false,
+            private: true,
             RouteComponent: AboutProduct,
         },
         {
             path: '/',
-            private: true,
+            private: false,
             RouteComponent: Home,
             routes: homeRoutes
         },

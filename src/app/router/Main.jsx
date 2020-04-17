@@ -1,4 +1,4 @@
-import React, { useContext, useCallback } from 'react';
+import React, { useContext, useCallback, Profiler } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { SessionContext } from 'providers/session';
 
@@ -16,6 +16,7 @@ function Main({ routes }) {
         if(path === '*' || path === '/') return `${path}`;
         return `/${path}`;
     }
+
     const routerManager = useCallback((arrayRoutes, ownerPath = '') => {
         return arrayRoutes.map(( {path, routes, private: loginRequired, RouteComponent }, index ) => {
             const fullPath = handlerPathManager(path, ownerPath);
@@ -33,13 +34,32 @@ function Main({ routes }) {
             )
         });
     }, [session]);
-
+    function onRenderCallback(
+        id, // the "id" prop of the Profiler tree that has just committed
+        phase, // either "mount" (if the tree just mounted) or "update" (if it re-rendered)
+        actualDuration, // time spent rendering the committed update
+        baseDuration, // estimated time to render the entire subtree without memoization
+        startTime, // when React began rendering this update
+        commitTime, // when React committed this update
+        interactions // the Set of interactions belonging to this update
+      ) {
+        // Aggregate or log render timings...
+        console.log(id)
+        console.log(phase)
+        console.log(actualDuration)
+        console.log(baseDuration)
+        console.log(startTime)
+        console.log(commitTime)
+        console.log(interactions)
+      }
     return (
+        <Profiler id="Navigation" onRender={onRenderCallback}>
         <BrowserRouter>
             <Switch>
                 {routerManager(routes)}
             </Switch>
         </BrowserRouter>
+        </Profiler>
     )
 }
 export default Main;

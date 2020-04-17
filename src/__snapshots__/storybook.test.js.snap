@@ -34,7 +34,7 @@ exports[`Storyshots Button Generic Dark Mode 1`] = `
   }
 >
   <button
-    className="sc-AxjAm iuhPQy"
+    className="sc-AxjAm dmLlNS"
     onClick={[Function]}
   >
     <p>
@@ -72,7 +72,7 @@ exports[`Storyshots Button Heart Dark Mode 1`] = `
   }
 >
   <button
-    className="sc-AxirZ gBAHCS"
+    className="sc-AxirZ bAExwR"
     onClick={[Function]}
     size={50}
   >
@@ -144,7 +144,7 @@ exports[`Storyshots Button Switch Dark Mode 1`] = `
   }
 >
   <button
-    className="sc-AxiKw eunhyn"
+    className="sc-AxiKw bHjPpP"
     onClick={[Function]}
   >
     <svg
@@ -272,7 +272,7 @@ exports[`Storyshots Button Toggle Dark Mode 1`] = `
   }
 >
   <button
-    className="sc-AxhCb gANHEt"
+    className="sc-AxhCb ljbirV"
     onClick={[Function]}
   >
     <svg
@@ -342,14 +342,14 @@ exports[`Storyshots Card Information Dark Mode 1`] = `
   }
 >
   <div
-    className="sc-AxmLO lhlaHo"
+    className="sc-AxmLO hqPxIB"
     onClick={[Function]}
   >
     <div
       className="relative-button"
     >
       <button
-        className="sc-AxirZ gBAHCS"
+        className="sc-AxirZ bAExwR"
         onClick={[Function]}
         size={50}
       >
@@ -396,7 +396,7 @@ exports[`Storyshots Card Information Dark Mode 1`] = `
       className="footer-button"
     >
       <button
-        className="sc-AxjAm iuhPQy"
+        className="sc-AxjAm dmLlNS"
         onClick={[Function]}
       >
         <p>
@@ -492,7 +492,7 @@ exports[`Storyshots Field Input Dark Mode 1`] = `
   }
 >
   <input
-    className="sc-AxhUy bcWHWJ"
+    className="sc-AxhUy dmxucm"
     name="inputField"
     onChange={[Function]}
     placeholder="Placeholder"
@@ -528,7 +528,7 @@ exports[`Storyshots Field TextArea Dark Mode 1`] = `
   }
 >
   <textarea
-    className="sc-AxgMl chVZde"
+    className="sc-AxgMl cbUKPd"
     name="inputField"
     onChange={[Function]}
     placeholder="Placeholder"
@@ -564,7 +564,7 @@ exports[`Storyshots Form Vertical Dark Mode 1`] = `
   }
 >
   <form
-    className="sc-AxheI bjqDlO"
+    className="sc-AxheI evmhbb"
     onSubmit={[Function]}
   >
     <fieldset>
@@ -572,7 +572,7 @@ exports[`Storyshots Form Vertical Dark Mode 1`] = `
         className="form-inputs"
       >
         <input
-          className="sc-AxhUy bcWHWJ"
+          className="sc-AxhUy dmxucm"
           name="inputField"
           onChange={[Function]}
           placeholder="Placeholder"
@@ -583,7 +583,7 @@ exports[`Storyshots Form Vertical Dark Mode 1`] = `
         className="form-inputs"
       >
         <textarea
-          className="sc-AxgMl chVZde"
+          className="sc-AxgMl cbUKPd"
           name="inputField"
           onChange={[Function]}
           placeholder="Placeholder"
@@ -594,7 +594,7 @@ exports[`Storyshots Form Vertical Dark Mode 1`] = `
         className="form-inputs"
       >
         <button
-          className="sc-AxjAm iuhPQy"
+          className="sc-AxjAm dmLlNS"
           onClick={[Function]}
         >
           <p>
@@ -685,7 +685,7 @@ exports[`Storyshots Modal Simple Dark Mode 1`] = `
   }
 >
   <div
-    className="sc-Axmtr gTLIMi -open_modal"
+    className="sc-Axmtr hfbDbK -open_modal"
   >
     <div
       className="modal_container"
@@ -721,7 +721,7 @@ exports[`Storyshots Modal Simple Dark Mode 1`] = `
         In this section you can put the description of your product, try not to extend it.
       </p>
       <button
-        className="sc-AxjAm iuhPQy"
+        className="sc-AxjAm dmLlNS"
         onClick={[Function]}
       >
         <p>
@@ -799,7 +799,7 @@ exports[`Storyshots Progress Circle Dark Mode 1`] = `
   }
 >
   <div
-    className="sc-fzozJi iEJUil"
+    className="sc-fzozJi hSmkCB"
     size={75}
   />
 </div>

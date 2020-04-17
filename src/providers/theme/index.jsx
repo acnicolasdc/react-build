@@ -7,6 +7,7 @@ import useClock from './hooks/useClock';
 
 export const lightContextTheme = lightTheme;
 export const darkContextTheme = darkTheme;
+
 export const ThemeContext = React.createContext({
     dark: false,
     auto: false,
