@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AiOutlineLoading } from 'react-icons/ai';
 import FormVertical from "components/Form/FormVertical";
 
 function UserAuthentication({ onSuccess, onFailure, onComplete }) {
@@ -38,7 +39,13 @@ function UserAuthentication({ onSuccess, onFailure, onComplete }) {
                     value={userData.password}
                     onChange={onChangeForm}
                 />,
-                <FormVertical.Button title={fetchLoading?'Loading...':'Sign in'} onClick={logInRequest} />
+                <FormVertical.Button
+                    title={fetchLoading?'Loading':'Sign in'}
+                    disableIcon={!fetchLoading}
+                    Icon={AiOutlineLoading}
+                    onClick={logInRequest}
+                    animation={true}
+                />
             ]}
         />
     )

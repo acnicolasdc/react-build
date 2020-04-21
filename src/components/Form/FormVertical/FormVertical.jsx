@@ -2,7 +2,7 @@ import React from 'react'
 import { FormContainer } from './styles'
 
 
-const FormVertical = ({ render, onSubmit: handleOnSubmit }) => {
+const FormVertical = ({ render, onSubmit }) => {
     const _renderInputs = () => {
         return render.map( (children, index) => (
             <div className ="form-inputs" key={index}>{children}</div>
@@ -11,7 +11,7 @@ const FormVertical = ({ render, onSubmit: handleOnSubmit }) => {
     return (
         <FormContainer onSubmit={ (e)=> {
                 e.preventDefault()
-                handleOnSubmit()
+                onSubmit()
             } }>
             <fieldset>
                 {_renderInputs()}

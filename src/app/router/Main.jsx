@@ -1,4 +1,5 @@
 import React, { useContext, useMemo, useCallback } from 'react';
+import Layout from '../components/Layout/Layout';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { SessionContext } from 'providers/session';
 
@@ -57,12 +58,24 @@ function Main({ routes }) {
 
     const routerMemo = useMemo(()=>routerManager(), [routerManager]);
 
+    if(session === false) {
+        return (
+            <BrowserRouter>
+                <Switch>
+                    {routerMemo}
+                </Switch>
+            </BrowserRouter>
+        )
+    }
+
     return (
-        <BrowserRouter>
-            <Switch>
-                {routerMemo}
-            </Switch>
-        </BrowserRouter>
+        <Layout>
+            <BrowserRouter>
+                <Switch>
+                    {routerMemo}
+                </Switch>
+            </BrowserRouter>
+        </Layout>
     )
 }
 export default Main;

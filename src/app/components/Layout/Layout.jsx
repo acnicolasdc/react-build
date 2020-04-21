@@ -1,18 +1,22 @@
 import React, { useContext } from 'react';
-import Main from './router';
 import usePortal from "hooks/usePortal";
 import ButtonSwitch from 'components/Button/ButtonSwitch';
 import ButtonToggle from 'components/Button/ButtonToggle';
 import ModalSimple from 'components/Modal/ModalSimple';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import { ThemeContext } from 'providers/theme';
-import { DarkModeContainer } from './styles';
+import { DarkModeContainer, ApplicationContainer } from './styles';
 
-function Layout() {
+function Layout({ children }) {
     const createPortal = usePortal('modal-root');
     const { dark, modal, auto, toggleSwitch, toggleModal, toggleModeAuto } = useContext(ThemeContext);
     return (
         <>
-            <Main />
+        <Header />
+        <ApplicationContainer>
+            {/* <Main /> */}
+            { children }
             <DarkModeContainer>
                 <ButtonSwitch onClick={toggleSwitch} isSwitch={dark}/>
                 <ButtonToggle onClick={toggleModeAuto} isToggle={auto}/>
@@ -25,6 +29,8 @@ function Layout() {
                     open={modal}
                 />)
             }
+        </ApplicationContainer>
+        <Footer />
         </>
     );
 }

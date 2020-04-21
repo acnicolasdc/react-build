@@ -11,6 +11,7 @@ function SessionProvider({ children }) {
     const [session, setSession] = useState(false);
 
     useLayoutEffect(() => {
+        // logout();
         let userSession = getStorage('user-session');
         if(userSession) {
             userSession = JSON.parse(userSession);

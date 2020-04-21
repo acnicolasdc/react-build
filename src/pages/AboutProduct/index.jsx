@@ -4,9 +4,7 @@ import ProductDetail from 'containers/Product/ProductDetail';
 const AboutProduct = (props) => {
     return (
         <div>
-            <p>About iPhone</p>
             <ProductDetail />
-            <p>About iPhone</p>
         </div>
     )
 }
