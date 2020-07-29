@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import * as defaultComponents from './styles';
 
 function getComponents(defaultComponents, overrides){
@@ -8,28 +8,39 @@ function getComponents(defaultComponents, overrides){
             component: override.component || defaultComponents[name],
             props: { $style: override.style, ...override.props},
         };
-        console.log(acc);
         return acc;
     }, {})
 }
 
 const ButtonRadioGroup = ({ overrides, options}) => {
+    const [ checked, setChecked ] = useState(null);
+
+    const getProps = () => ({
+        $isChecked: checked,
+    })
     const {
         RadioContainer: { component: RadioContainer, props: radioContainerProps},
+        RadioButtonHover: { component: RadioButtonHover, props: radioButtonHoverProps},
         RadioButtonLabel: { component: RadioButtonLabel, props: radioButtonLabelProps},
         RadioButton: { component: RadioButton, props: radioButtonProps},
         Root: { component: Root, props: rootProps}
-    } = getComponents(defaultComponents, overrides)
+    } = useCallback(getComponents(defaultComponents, overrides),[overrides])
+    const getSharedProps = getProps();
     return (
-        <Root>
-            {options?.map(({ name, value})=>(
-                <RadioContainer key={value}>
-                    <RadioButton
-                        type="radio"
-                        name={name}
-                        value={value}
-                    />
-                    <RadioButtonLabel />
+        <Root {...getSharedProps} {...rootProps}>
+            {options?.map(({ name, value, option})=>(
+                <RadioContainer key={value} {...getSharedProps} {...radioContainerProps}>
+                    <div className="radio_base">
+                        <RadioButton
+                            type="radio"
+                            name={name}
+                            value={value}
+                            {...radioButtonProps}
+                            {...getSharedProps}
+                        />
+                        <RadioButtonHover {...getSharedProps} {...radioButtonHoverProps}/>
+                    </div>
+                    <RadioButtonLabel {...getSharedProps} {...radioButtonLabelProps}>{option}</RadioButtonLabel>
                 </RadioContainer>
             ))}
         </Root>
@@ -38,7 +49,7 @@ const ButtonRadioGroup = ({ overrides, options}) => {
 
 ButtonRadioGroup.defaultProps = {
     overrides:{},
-    options:[{ name:'defaultRadio', value:'defaultValue'}],
+    options:[{ name:'defaultRadio', value:'defaultValue', option:'House'}],
 }
 
-export default ButtonRadioGroup
+export default React.memo(ButtonRadioGroup)

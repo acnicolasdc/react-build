@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Root = styled.div`
     display: flex;
     flex-direction: column;
-    background-color:red;
+    ${props => props.$style}
 `;
 
 export const RadioContainer = styled.div`
@@ -12,18 +12,33 @@ export const RadioContainer = styled.div`
   align-items: center;
   padding: 5px;
   position: relative;
+  flex-direction: row;
+  .radio_base{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    position: relative;
+  }
+  ${props => props.$style}
 `;
 
-export const RadioButtonLabel = styled.label`
+export const RadioButtonHover = styled.label`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 24px;
   height: 24px;
-  border-radius: 50%;
-  background: white;
-  border: 1px solid #bebebe;
+  border-radius: 150px;
+  background: #E0E5EC;
+  box-shadow:  2px 2px 5px #bec3c9, 
+             -2px -2px 5px #ffffff;
+  outline: none;
+  ${props => props.$style}
+`;
+export const RadioButtonLabel = styled.label`
+  color: ${props => props.theme.textColor};
+  ${props => props.$style}
 `;
 export const RadioButton = styled.input`
   opacity: 0;
@@ -31,24 +46,27 @@ export const RadioButton = styled.input`
   border-radius: 50%;
   width: 24px;
   height: 24px;
-  &:hover ~ ${RadioButtonLabel} {
-    background: #bebebe;
+  &:hover ~ ${RadioButtonHover} {
+    border-radius: 150px;
+    background: linear-gradient(145deg, #caced4, #f0f5fd);
+    box-shadow:  2px 2px 5px #bec3c9, 
+             -2px -2px 5px #ffffff;
     &::after {
       content: "";
       display: block;
       border-radius: 50%;
       width: 12px;
       height: 12px;
-      margin: 5px;
-      background: #eeeeee;
+      margin: 6px;
+      background: ${props => props.theme.shinyBlue};
     }
   }
   ${props =>
-    props.checked &&
+    props.$isChecked &&
     ` 
-    &:checked + ${RadioButtonLabel} {
-      background: #db7290;
-      border: 1px solid #db7290;
+    &:checked + ${RadioButtonHover} {
+      background:${props.theme.shinyBlue};
+      border: 1px solid #${props.theme.shinyBlue};
       &::after {
         content: "";
         display: block;
@@ -61,4 +79,5 @@ export const RadioButton = styled.input`
       }
     }
   `}
+  ${props => props.$style}
 `;
