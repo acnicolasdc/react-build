@@ -1,24 +1,46 @@
-import React from 'react'
-import ButtonRadioGroup from '../../../../components/Button/ButtonRadioGroup'
+import React, {useState} from 'react'
+import ButtonRadioGroup from '../../../../components/Button/ButtonRadioGroup';
+import CardRadioOption from './components/CardRadioOption'
 
 export default function Override() {
+    const [selected, setSelected] = useState("first");
     return (
         <div>
             <h1>Hello Override</h1>
             <div style={{width:'100%', display: 'flex', justifyContent: 'center'}}>
             <ButtonRadioGroup 
-                options={[{ name:'defaultRadio', value:'defaultValue', option:'House'}, { name:'radio2', value:'radio2', option:'Apartment'}]}
-            />
-                <ButtonRadioGroup 
+                check={selected}
+                onChange={setSelected}
                 overrides={{
                     RadioButtonLabel:{
-                        component: ({...restProps})=><button {...restProps}>more information</button>,
-                        props: {onClick:()=> alert('Este es mi primer radio button')},
+                        component: ({ $style, onClick }) => <button style={$style} onClick={onClick}> más informacion</button>,
+                        style:{
+                            marginTop:'10px'
+                        },
+                        props: {
+                            onClick: () => alert('Lean-tech.io')
+                        }
                     },
-                }}
-                options={[{ name:'defaultRadio3', value:'defaultValue3', option:'House3'}, { name:'radio23', value:'radio23', option:'Apartment3'}]}
-            />
+                    RadioContainer:{
+                        style:{
+                            flexDirection:'column'
+                        }
+                    },
+                    Root: {
+                        style:{
+                            flexDirection:'row'
+                        }
+                    },
+                    RadioButton:{
+                        component: CardRadioOption
 
+                    }
+
+                }}
+                options={[{ name:'defaultRadio', value:'defaultValue', option:'House'}, { name:'radio2', value:'radio2', option:'Apartment'},
+                { name:'radio3', value:'radio3', option:'Nicolás'}]}
+            />
+            <ButtonRadioGroup  />
             </div>
         </div>
     )

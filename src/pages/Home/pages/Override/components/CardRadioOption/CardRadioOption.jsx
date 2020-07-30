@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { AiFillApple } from "react-icons/ai";
+import { Root } from './styles';
 
-const CardRadioOption = () => {
+const CardRadioOption = (props) => {
     return (
-        <div>
-            
-        </div>
+        <Root {...props}>
+            <AiFillApple size={30}/>
+        </Root>
     )
 }
 

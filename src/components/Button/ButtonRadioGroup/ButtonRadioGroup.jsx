@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback } from 'react'
 import * as defaultComponents from './styles';
 
 function getComponents(defaultComponents, overrides){
@@ -12,35 +12,25 @@ function getComponents(defaultComponents, overrides){
     }, {})
 }
 
-const ButtonRadioGroup = ({ overrides, options}) => {
-    const [ checked, setChecked ] = useState(null);
-
-    const getProps = () => ({
-        $isChecked: checked,
-    })
+const ButtonRadioGroup = ({ overrides, options, check, onChange}) => {
     const {
         RadioContainer: { component: RadioContainer, props: radioContainerProps},
-        RadioButtonHover: { component: RadioButtonHover, props: radioButtonHoverProps},
         RadioButtonLabel: { component: RadioButtonLabel, props: radioButtonLabelProps},
         RadioButton: { component: RadioButton, props: radioButtonProps},
         Root: { component: Root, props: rootProps}
     } = useCallback(getComponents(defaultComponents, overrides),[overrides])
-    const getSharedProps = getProps();
     return (
-        <Root {...getSharedProps} {...rootProps}>
+        <Root {...rootProps}>
             {options?.map(({ name, value, option})=>(
-                <RadioContainer key={value} {...getSharedProps} {...radioContainerProps}>
-                    <div className="radio_base">
+                <RadioContainer key={value} {...radioContainerProps}>
                         <RadioButton
-                            type="radio"
-                            name={name}
-                            value={value}
+                            $name={name}
+                            $value={value}
+                            $isChecked={check === name}
+                            onClick={()=> onChange(name)}
                             {...radioButtonProps}
-                            {...getSharedProps}
                         />
-                        <RadioButtonHover {...getSharedProps} {...radioButtonHoverProps}/>
-                    </div>
-                    <RadioButtonLabel {...getSharedProps} {...radioButtonLabelProps}>{option}</RadioButtonLabel>
+                    <RadioButtonLabel {...radioButtonLabelProps}>{option}</RadioButtonLabel>
                 </RadioContainer>
             ))}
         </Root>

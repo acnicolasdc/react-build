@@ -22,62 +22,40 @@ export const RadioContainer = styled.div`
   ${props => props.$style}
 `;
 
-export const RadioButtonHover = styled.label`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 24px;
-  height: 24px;
-  border-radius: 150px;
-  background: #E0E5EC;
-  box-shadow:  2px 2px 5px #bec3c9, 
-             -2px -2px 5px #ffffff;
-  outline: none;
-  ${props => props.$style}
-`;
 export const RadioButtonLabel = styled.label`
   color: ${props => props.theme.textColor};
   ${props => props.$style}
 `;
-export const RadioButton = styled.input`
-  opacity: 0;
-  z-index: 1;
+
+export const RadioButton = styled.div`
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+  border: 2px solid ${props => props.theme.shinyBlue};
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  &:hover ~ ${RadioButtonHover} {
-    border-radius: 150px;
-    background: linear-gradient(145deg, #caced4, #f0f5fd);
-    box-shadow:  2px 2px 5px #bec3c9, 
-             -2px -2px 5px #ffffff;
-    &::after {
-      content: "";
-      display: block;
-      border-radius: 50%;
-      width: 12px;
-      height: 12px;
-      margin: 6px;
-      background: ${props => props.theme.shinyBlue};
-    }
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px;
+  transition: all 0.1s linear;
+  background: #E0E5EC;
   ${props =>
-    props.$isChecked &&
-    ` 
-    &:checked + ${RadioButtonHover} {
-      background:${props.theme.shinyBlue};
-      border: 1px solid #${props.theme.shinyBlue};
+    props.$isChecked?`
+      background: linear-gradient(145deg, #caced4, #f0f5fd);
+      box-shadow:  2px 2px 5px #bec3c9, 
+              -2px -2px 5px #ffffff;
       &::after {
         content: "";
-        display: block;
+        width: 8px;
+        height: 8px;
         border-radius: 50%;
-        width: 12px;
-        height: 12px;
-        margin: 5px;
-        box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.1);
-        background: white;
-      }
-    }
-  `}
-  ${props => props.$style}
+        background-color: ${props.theme.shinyBlue};
+        transition: all 0.1s linear;
+    ` :` 
+        border: 3px solid #caced4;
+        box-shadow:  2px 2px 5px #bec3c9, 
+              -2px -2px 5px #ffffff;
+    ` 
+  }
 `;
