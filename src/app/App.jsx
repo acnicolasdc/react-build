@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from './Layout';
-import ThemeProvider from 'theme/index';
+import ThemeProvider from '../theme';
 
 function App() {
   return (

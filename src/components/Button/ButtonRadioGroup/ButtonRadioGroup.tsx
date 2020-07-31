@@ -1,27 +1,48 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import * as defaultComponents from './styles';
 
-function getComponents(defaultComponents, overrides){
-    return Object.keys(defaultComponents).reduce((acc, name)=>{
-        const override = overrides[name] || {};
+type DefaultComponents = {
+    RadioContainer?: any;
+    RadioButtonLabel?: any;
+    RadioButton?: any;
+    Root?: any;
+}
+type OverrideComponents = {
+    style?: object;
+    props?: object;
+    component?: any;
+}
+
+function getComponents(defaultComponents: any, overrides: any): object{
+    return Object.keys(defaultComponents).reduce((acc: any, name: string)=>{
+        const override: OverrideComponents = overrides[name] || {};
+        const component: any = override.component || defaultComponents[name];
         acc[name] = {
-            component: override.component || defaultComponents[name],
+            component: component,
             props: { $style: override.style, ...override.props},
         };
         return acc;
     }, {})
 }
 
-const ButtonRadioGroup = ({ overrides, options, check, onChange}) => {
+export interface ButtonRadioGroupProps {
+    overrides: any;
+    options: Array<object>;
+    onChange: (name: string) => void;
+    check: boolean;
+};
+
+const ButtonRadioGroup: React.FunctionComponent<ButtonRadioGroupProps> = ({ overrides, options, check, onChange}) => {
     const {
         RadioContainer: { component: RadioContainer, props: radioContainerProps},
         RadioButtonLabel: { component: RadioButtonLabel, props: radioButtonLabelProps},
         RadioButton: { component: RadioButton, props: radioButtonProps},
         Root: { component: Root, props: rootProps}
-    } = useCallback(getComponents(defaultComponents, overrides),[overrides])
+    }: DefaultComponents = getComponents(defaultComponents, overrides);
+
     return (
         <Root {...rootProps}>
-            {options?.map(({ name, value, option})=>(
+            {options?.map(({ name, value, option}:any)=>(
                 <RadioContainer key={value} {...radioContainerProps}>
                         <RadioButton
                             $name={name}
