@@ -1,22 +1,20 @@
 import React from 'react'
 import * as defaultComponents from './styles';
+import { DefaultComponents, Options, OverrideComponents} from './utils/types';
 
-type DefaultComponents = {
-    RadioContainer?: any;
-    RadioButtonLabel?: any;
-    RadioButton?: any;
-    Root?: any;
-}
-type OverrideComponents = {
-    style?: object;
-    props?: object;
-    component?: any;
-}
+const OPTIONS = [{ name:'defaultRadio', value:'defaultValue', option:'House'}];
+const ON_CHANGE = () => (false);
+export interface ButtonRadioGroupProps {
+    overrides?: DefaultComponents;
+    options: Array<Options>;
+    onChange: (name: string) => void;
+    check: string;
+};
 
-function getComponents(defaultComponents: any, overrides: any): object{
+function getComponents(defaultComponents: DefaultComponents, overrides: DefaultComponents): object{
     return Object.keys(defaultComponents).reduce((acc: any, name: string)=>{
         const override: OverrideComponents = overrides[name] || {};
-        const component: any = override.component || defaultComponents[name];
+        const component: React.ComponentType<any> = override.component || defaultComponents[name];
         acc[name] = {
             component: component,
             props: { $style: override.style, ...override.props},
@@ -25,14 +23,12 @@ function getComponents(defaultComponents: any, overrides: any): object{
     }, {})
 }
 
-export interface ButtonRadioGroupProps {
-    overrides: any;
-    options: Array<object>;
-    onChange: (name: string) => void;
-    check: boolean;
-};
+function getStatus(check: string, name:string): boolean {
+    if(check === name) return true;
+    return false;
+}
 
-const ButtonRadioGroup: React.FunctionComponent<ButtonRadioGroupProps> = ({ overrides, options, check, onChange}) => {
+const ButtonRadioGroup: React.FunctionComponent<ButtonRadioGroupProps> = ({ overrides = {}, options = OPTIONS, check = '', onChange = ON_CHANGE}) => {
     const {
         RadioContainer: { component: RadioContainer, props: radioContainerProps},
         RadioButtonLabel: { component: RadioButtonLabel, props: radioButtonLabelProps},
@@ -42,12 +38,12 @@ const ButtonRadioGroup: React.FunctionComponent<ButtonRadioGroupProps> = ({ over
 
     return (
         <Root {...rootProps}>
-            {options?.map(({ name, value, option}:any)=>(
+            {options?.map(({ name, value, option}:Options)=>(
                 <RadioContainer key={value} {...radioContainerProps}>
                         <RadioButton
                             $name={name}
                             $value={value}
-                            $isChecked={check === name}
+                            $isChecked={getStatus(check, name)}
                             onClick={()=> onChange(name)}
                             {...radioButtonProps}
                         />
@@ -56,11 +52,6 @@ const ButtonRadioGroup: React.FunctionComponent<ButtonRadioGroupProps> = ({ over
             ))}
         </Root>
     )
-}
-
-ButtonRadioGroup.defaultProps = {
-    overrides:{},
-    options:[{ name:'defaultRadio', value:'defaultValue', option:'House'}],
 }
 
 export default React.memo(ButtonRadioGroup)
