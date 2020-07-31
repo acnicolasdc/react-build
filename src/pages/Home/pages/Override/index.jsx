@@ -4,6 +4,7 @@ import CardRadioOption from './components/CardRadioOption'
 
 export default function Override() {
     const [selected, setSelected] = useState("first");
+    const [selected2, setSelected2] = useState("us");
     return (
         <div>
             <h1>Hello Override</h1>
@@ -11,36 +12,43 @@ export default function Override() {
             <ButtonRadioGroup 
                 check={selected}
                 onChange={setSelected}
+                options={[{ name:'defaultRadio', value:'defaultValue', option:'House'}, { name:'radio2', value:'radio2', option:'Apartment'},
+                { name:'radio3', value:'radio3', option:'Nicolás'}]}
+            />
+            <ButtonRadioGroup
+                check={selected2}
+                onChange={setSelected2}
                 overrides={{
                     RadioButtonLabel:{
-                        component: ({ $style, onClick }) => <button style={$style} onClick={onClick}> más informacion</button>,
+                        component:({$style, ...props})=><button
+                        {...props}
+                        style={{...$style}}
+                        > Mas informacion </button>,
                         style:{
-                            marginTop:'10px'
+                            color:'red',
+                            marginTop: '10px'
                         },
-                        props: {
-                            onClick: () => alert('Lean-tech.io')
+                        props:{
+                            onClick:()=> alert('bienvenido a Lean-Tech')
                         }
                     },
-                    RadioContainer:{
-                        style:{
-                            flexDirection:'column'
-                        }
-                    },
-                    Root: {
+                    Root:{
                         style:{
                             flexDirection:'row'
                         }
                     },
                     RadioButton:{
-                        component: CardRadioOption
-
+                        component:CardRadioOption
+                    },
+                    RadioContainer:{
+                        style:{
+                            flexDirection:'column'
+                        }
                     }
-
                 }}
-                options={[{ name:'defaultRadio', value:'defaultValue', option:'House'}, { name:'radio2', value:'radio2', option:'Apartment'},
-                { name:'radio3', value:'radio3', option:'Nicolás'}]}
+                options={[{ name:'us', value:'appleus', option:'Apple US'}, { name:'col', value:'applecol', option:'Apple Colombia'},
+                { name:'mx', value:'applemx', option:'Apple Mexico'}]}
             />
-            <ButtonRadioGroup  />
             </div>
         </div>
     )
