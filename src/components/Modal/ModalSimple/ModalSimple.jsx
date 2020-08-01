@@ -1,23 +1,18 @@
 import React from 'react'
 import classNames from 'classnames';
-import usePortal from "hooks/usePortal";
 import { ModalSimpleContainer } from './styles';
 
-function ModalSimple({ onClick:handleOnClick, buttonTitle, Icon, Button, text, title, iconColor, iconSize, open,...restProps }) {
-    const createPortal = usePortal('modal-root');
+function ModalSimple({ Icon, Button, text, title, iconSize, open }) {
     const openModal = classNames({ '-open_modal': open });
     return (
-        createPortal(
-            <ModalSimpleContainer className={openModal} {...restProps}>
+            <ModalSimpleContainer className={openModal}>
                 <div className='modal_container'>
-                    <Icon className='icon_rotate' size={iconSize} color={iconColor}/>
+                    <Icon className='icon_rotate' size={iconSize}/>
                     <h3 className='modal_title'>{title}</h3>
                     <p className='modal_text'>{text}</p>
-                    <Button title={buttonTitle} onClick={handleOnClick}/>
+                    <Button/>
                 </div>
             </ModalSimpleContainer>
-        )
-
     )
 }
 

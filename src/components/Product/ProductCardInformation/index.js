@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import ProductCardInformation from './ProductCardInformation';
 import ButtonHeart from '../../Button/ButtonHeart';
 import ButtonGeneric from '../../Button/ButtonGeneric';
-import CONST from './utils/const.js';
+import CONST from './utils/constants';
 
 ProductCardInformation.propTypes = {
     image: PropTypes.string.isRequired,
@@ -12,10 +12,7 @@ ProductCardInformation.propTypes = {
     FooterButton: PropTypes.func.isRequired,
     disabledFooterButton: PropTypes.bool.isRequired,
     disabledTopButton: PropTypes.bool.isRequired,
-    onClickCard: PropTypes.func.isRequired,
-    onClickButtonFooter: PropTypes.func.isRequired,
-    onClickButtonTop: PropTypes.func.isRequired,
-    isSelected: PropTypes.bool.isRequired,
+    onClick: PropTypes.func.isRequired,
 };
 
 ProductCardInformation.defaultProps = {
@@ -24,12 +21,13 @@ ProductCardInformation.defaultProps = {
     description: CONST.GENERIC_PRODUCT_DESCRIPTION,
     disabledFooterButton: CONST.GENERIC_PRODUCT_DISABLED_FOOTER_BUTTON,
     disabledTopButton: CONST.GENERIC_PRODUCT_DISABLED_TOP_BUTTON,
-    TopButton: ButtonHeart,
-    FooterButton: ButtonGeneric,
-    isSelected: false,
-    onClickCard: () => {},
-    onClickButtonFooter: () => {},
-    onClickButtonTop: () => {},
+    TopButton: () => null,
+    FooterButton: () => null,
+    onClick: () => {},
 };
 
+ProductCardInformation.FooterButton = ButtonGeneric;
+ProductCardInformation.TopButton = ButtonHeart;
+
+export const constants = CONST;
 export default ProductCardInformation;

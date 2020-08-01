@@ -8,11 +8,11 @@ import Dashboard from './pages/Dashboard';
 
 export const routes = [
     {
-        name: 'account',
+        path: 'account',
         RouteComponent: Account
     },
     {
-        name: 'dashboard',
+        path: 'dashboard',
         RouteComponent: Dashboard
     },
     {

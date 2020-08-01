@@ -15,10 +15,9 @@ function ProductCardInformationActions({Item}) {
     }
     return (
         <Item
-            onClickCard={_goToOther}
-            onClickButtonFooter={_cardAddToCart}
-            onClickButtonTop={_cardLike}
-            isSelected={like}
+            onClick={_goToOther}
+            TopButton={()=> <Item.TopButton onClick={_cardLike} isSelected={like}/>}
+            FooterButton={()=> <Item.FooterButton onClick={_cardAddToCart}/>}
         />
     )
 }

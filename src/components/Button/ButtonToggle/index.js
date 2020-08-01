@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import { IoIosContrast } from 'react-icons/io';
 import ButtonToggle from './ButtonToggle';
+import CONST from './utils/constants';
 
 ButtonToggle.propTypes = {
     Icon: PropTypes.func.isRequired,
@@ -10,8 +11,9 @@ ButtonToggle.propTypes = {
 
 ButtonToggle.defaultProps = {
     Icon: IoIosContrast,
-    isToggle: false,
+    isToggle: CONST.GENERIC_BUTTON_TOGGLE_IS_TOGGLED,
     onClick: () => console.log('Without onClick function'),
 };
 
+export const constants = CONST;
 export default ButtonToggle;

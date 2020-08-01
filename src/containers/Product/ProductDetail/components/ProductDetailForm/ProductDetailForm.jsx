@@ -1,24 +1,25 @@
 
 
 import React from 'react';
+import FormVertical from 'components/Form/FormVertical';
 
-function ProductDetailForm({ Form, Input, TextArea, Button, product, onChangeInput:handleOnChangeInput }) {
+function ProductDetailForm({ product, onChangeInput:handleOnChangeInput }) {
     return (
-        <Form
+        <FormVertical
             render={[
-                <Input
+                <FormVertical.Input
                     name='name'
                     placeholder='Write a new name'
                     value={product.name}
                     onChange={handleOnChangeInput}
                 />,
-                <TextArea
+                <FormVertical.TextArea
                     name='description'
                     placeholder='Write a new description'
                     value={product.description}
                     onChange={handleOnChangeInput}
                 />,
-                <Button title='Update product'/>
+                <FormVertical.Button title='Update product'/>
             ]}
         />
     )
