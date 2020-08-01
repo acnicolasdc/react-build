@@ -1,9 +1,9 @@
 import React from 'react'
 import { ButtonHeartContainer } from './styles';
 
-const ButtonHeart = ({ onClick:handleOnClick, Icon, IconSelected, size, isSelected, ...restProps }) => {
+const ButtonHeart = ({ onClick:handleOnClick, Icon, IconSelected, size, isSelected }) => {
     return (
-        <ButtonHeartContainer size={size} {...restProps} //in this line we pass the theme provider
+        <ButtonHeartContainer size={size}
             onClick={(e)=>{
                 e.stopPropagation();
                 handleOnClick();

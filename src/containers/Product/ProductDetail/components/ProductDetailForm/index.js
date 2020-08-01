@@ -1,15 +1,7 @@
 import PropTypes from 'prop-types'
 import ProductDetailForm from './ProductDetailForm';
-import FormBody from 'components/Form/FormBody';
-import FormInput from 'components/Form/FormInput';
-import FormTextArea from 'components/Form/FormTextArea';
-import ButtonGeneric from 'components/Button/ButtonGeneric';
 
 ProductDetailForm.propTypes = {
-    Form: PropTypes.func.isRequired,
-    Input: PropTypes.func.isRequired,
-    TextArea: PropTypes.func.isRequired,
-    Button: PropTypes.func.isRequired,
     product: PropTypes.shape({
         name: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
@@ -18,10 +10,6 @@ ProductDetailForm.propTypes = {
 };
 
 ProductDetailForm.defaultProps = {
-    Form: FormBody,
-    Input: FormInput,
-    TextArea: FormTextArea,
-    Button: ButtonGeneric,
     product: { name: '', description: '' },
     onChangeInput: () => console.log('Without onChangeInput'),
 };

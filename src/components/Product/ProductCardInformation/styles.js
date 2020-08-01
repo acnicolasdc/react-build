@@ -8,25 +8,30 @@ export const CardContainer = styled.div`
     background-color:${props => props.theme.background};
     box-shadow: ${props => props.theme.squaredShadow};
     text-align: center;
-    padding: 15px 20px;
-    h1 {
+    padding: 25px 20px;
+    .product-title {
         font-size: 3rem;
         color: ${props => props.theme.titleColor};
         margin: auto;
         vertical-align: middle;
         margin-bottom: 15px;
     }
-    p {
+    .product-description {
         font-size: 1rem;
         color: ${props => props.theme.textColor};
-        padding: 0px 20px;
+        margin: 0px 20px;
     }
-    img {
-        width: 80%;
-        object-fit: contain;
-        -webkit-filter: grayscale(90%); /* Safari 6.0 - 9.0 */
-        filter: grayscale(90%);
+    .img-container {
+        max-height: 350px;
+        padding: 20px;
+        img {
+            width: 60%;
+            object-fit: contain;
+            -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(50%);
+        }
     }
+
     .relative-button{
         position: absolute;
         right: 4%;

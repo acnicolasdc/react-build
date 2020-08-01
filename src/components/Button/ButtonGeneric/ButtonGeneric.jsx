@@ -1,15 +1,17 @@
-import React from 'react'
+import React from 'react';
+import classNames from 'classnames';
 import { ButtonGenericContainer } from './styles';
 
-const ButtonGeneric = ({ onClick:handleOnClick, title, ...restProps }) => {
+const ButtonGeneric = ({ onClick, title, animation, disableIcon, Icon }) => {
+    const iconClass = classNames(['button_icon', { '-animation': animation }]);
     return (
         <ButtonGenericContainer
-        {...restProps} //in this line we pass the theme provider
-        onClick={(e)=>{
-            e.stopPropagation();
-            handleOnClick();
-        }}>
+            onClick={(e)=>{
+                e.stopPropagation();
+                onClick();
+            }}>
             <p>{title}</p>
+            {!disableIcon&&<Icon className={iconClass} />}
         </ButtonGenericContainer>
     )
 }
