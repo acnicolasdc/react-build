@@ -4,6 +4,7 @@ import Home from './Home';
 import Account from './pages/Account';
 import Override from './pages/Override';
 import Dashboard from './pages/Dashboard';
+import Teleportation from './pages/Teleportation';
 
 
 export const routes = [
@@ -18,6 +19,10 @@ export const routes = [
     {
         name: 'override',
         RouteComponent: Override
+    },
+    {
+        name: 'teleport',
+        RouteComponent: Teleportation
     },
 ];
 export default Home;

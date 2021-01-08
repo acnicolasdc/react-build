@@ -3,12 +3,14 @@ import Main from './router';
 import ButtonSwitch from 'components/Button/ButtonSwitch';
 import ButtonToggle from 'components/Button/ButtonToggle';
 import ModalSimple from 'components/Modal/ModalSimple';
+import Header from './Header';
 import { ThemeContext } from 'theme/index';
 import { DarkModeContainer } from './styles';
 function Layout() {
     const { dark, modal, auto, toggleSwitch, toggleModal, toggleModeAuto } = useContext(ThemeContext);
     return (
         <>
+            <Header/>
             <Main />
             <DarkModeContainer>
                 <ButtonSwitch onClick={toggleSwitch} isToggle={dark}/>

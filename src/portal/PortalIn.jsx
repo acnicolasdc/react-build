@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { PortalContext } from './index';
 
-export const PortalIn = (props) => {
+const PortalIn = (props) => {
     const { addPortalItem, removePortalItem } = useContext(PortalContext);
   
     useEffect(() => {
@@ -12,3 +12,5 @@ export const PortalIn = (props) => {
   
     return null;
   };
+
+export default PortalIn;
